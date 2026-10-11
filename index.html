@@ -38,7 +38,7 @@
   img,svg{display:block;max-width:100%}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
   :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
- 
+
   /* ================= TOP BAR ================= */
   .topbar{
     background:var(--ink);color:#DCE6E5;font-size:.86rem;
@@ -46,7 +46,7 @@
   }
   .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
   .topbar strong{color:#fff;font-weight:600}
- 
+
   header.site{
     position:sticky;top:0;z-index:50;background:rgba(251,250,247,.94);
     backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
@@ -75,7 +75,7 @@
   .btn-lg{padding:17px 34px;font-size:1.08rem}
   .btn-outline{background:transparent;color:var(--ink);border:1.6px solid var(--ink);padding:15px 28px}
   .btn-outline:hover{background:rgba(16,27,30,.05)}
- 
+
   /* ================= HERO ================= */
   .hero{position:relative;overflow:hidden;background:
       radial-gradient(1100px 520px at 88% -8%, #EAF3F1 0%, rgba(234,243,241,0) 62%),
@@ -93,7 +93,7 @@
   .hero .lede{margin:22px auto 0;font-size:1.1rem;color:var(--mid);max-width:68ch}
   .hero-actions{margin-top:30px;display:flex;gap:13px;flex-wrap:wrap;justify-content:center}
   @media (max-width:760px){ .hero h1{white-space:normal} }
- 
+
   .statbar{
     margin-top:44px;border-top:1px solid var(--line);
     display:grid;grid-template-columns:repeat(3,1fr);
@@ -102,7 +102,7 @@
   .stat:last-child{border-left:none}
   .stat b{display:block;font-family:'Rubik',sans-serif;font-size:1.9rem;line-height:1.1;color:var(--ink)}
   .stat span{font-size:.92rem;color:var(--mid)}
- 
+
   /* map card */
   .mapcard{
     background:var(--panel);border:1px solid var(--line);border-radius:10px;
@@ -119,7 +119,7 @@
     border-top:1px solid var(--line);font-size:.83rem;color:var(--mid)}
   .lg{display:flex;align-items:center;gap:7px}
   .sw{width:13px;height:13px;border-radius:3px;flex:none}
- 
+
   /* ================= SECTIONS ================= */
   section{padding:84px 0}
   .sec-tag{
@@ -132,7 +132,7 @@
   .sec-head p{margin:15px auto 0;color:var(--mid);font-size:1.05rem;max-width:62ch}
   @media (max-width:640px){ .sec-head h2{white-space:normal} }
   .alt{background:var(--panel);border-block:1px solid var(--line)}
- 
+
   /* trigger cards */
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .card{
@@ -147,7 +147,7 @@
   .card h3{font-family:'Heebo',sans-serif;font-weight:700;font-size:1.1rem}
   .card p{margin-top:9px;color:var(--mid);font-size:.98rem}
   .card > div:last-child{flex:1}
- 
+
   /* about */
   .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
   .portrait{
@@ -164,7 +164,7 @@
   .cred svg{width:21px;height:21px;flex:none;margin-top:4px}
   .cred b{font-weight:700;display:block;color:var(--ink)}
   .cred span{color:var(--mid);font-size:.97rem}
- 
+
   /* process flow */
   .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
   .fstep{position:relative;padding:0 18px}
@@ -179,7 +179,7 @@
   .frail{position:absolute;top:23px;right:0;left:0;height:2px;background:var(--line);z-index:1}
   .fstep h3{margin-top:18px;font-family:'Heebo',sans-serif;font-weight:700;font-size:1.06rem}
   .fstep p{margin-top:8px;color:var(--mid);font-size:.96rem}
- 
+
   /* data / requirements */
   .split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
   .panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:30px}
@@ -189,7 +189,7 @@
     font-size:.99rem;color:var(--mid)}
   .panel li:last-child{border-bottom:none}
   .panel li svg{width:18px;height:18px;flex:none;margin-top:6px}
- 
+
   .prose{max-width:72ch;margin:0 auto}
   .src-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
   .src-grid .prose{max-width:none;margin:0}
@@ -197,13 +197,13 @@
   .src-fig svg{width:100%;height:auto;max-width:520px;margin:0 auto}
   .prose p{color:var(--mid);font-size:1.02rem;margin-bottom:16px}
   .prose p:last-child{margin-bottom:0}
- 
+
   .insight{
     margin-top:24px;background:var(--accent-soft);border-radius:8px;
     border-right:4px solid var(--accent);padding:22px 24px;
   }
   .insight p{color:var(--ink-2);font-size:.99rem;margin:0}
- 
+
   /* ---- flowchart ---- */
   .chart{
     --cl:rgba(14,124,107,.55);
@@ -215,7 +215,7 @@
   }
   .chart-note{display:block;font-weight:400;font-size:.82rem;color:var(--mid);margin-top:5px}
   .chart-connector{width:2px;height:26px;background:var(--cl);margin:0 auto}
- 
+
   /* fork: stem + horizontal rail + one drop into each branch */
   .chart-split{
     --g:18px;position:relative;padding-top:40px;
@@ -230,7 +230,7 @@
     left:calc(25% - var(--g) / 4 - 1px);right:calc(25% - var(--g) / 4 - 1px);
     border:2px solid var(--cl);border-bottom:none;
   }
- 
+
   .chart-branch{display:flex;flex-direction:column}
   .chart-branch > .chart-step{border-radius:8px 8px 0 0}
   .chart-outcome-label{
@@ -248,14 +248,14 @@
     .chart-split::after{display:none}
     .chart-split::before{height:40px}
   }
- 
+
   .notice{
     margin-top:26px;background:#FDF3EC;border:1px solid rgba(194,90,43,.28);
     border-right:4px solid var(--alert);border-radius:8px;padding:22px 24px;
   }
   .notice h4{font-family:'Heebo',sans-serif;font-weight:700;font-size:1.05rem;color:var(--alert)}
   .notice p{margin-top:8px;color:var(--mid);font-size:.99rem}
- 
+
   /* CTA band */
   .band{background:var(--ink);color:#EAF1F0;border-radius:12px;padding:46px 44px;
     display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
@@ -263,7 +263,7 @@
   .band p{margin-top:10px;color:#A9BDBC;max-width:52ch}
   .band .btn-main{background:#fff;color:var(--ink)}
   .band .btn-main:hover{background:var(--sand)}
- 
+
   /* form */
   .formwrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:start}
   .formside h2{font-size:clamp(1.7rem,2.8vw,2.2rem)}
@@ -285,16 +285,16 @@
   .hint{font-size:.84rem;color:var(--mid);margin-top:11px;text-align:center}
   #msg{display:none;margin-top:14px;padding:12px 14px;border-radius:7px;font-weight:600;font-size:.96rem}
   #msg.show{display:block}
- 
+
   footer{background:var(--ink);color:#93A9A8;padding:44px 0;font-size:.92rem}
   footer .wrap{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
   footer a{color:#DCE6E5;text-decoration:none}
- 
+
   .float{position:fixed;bottom:22px;left:22px;z-index:60;display:flex;gap:10px}
   .float a{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;
     box-shadow:0 8px 24px -8px rgba(0,0,0,.45);text-decoration:none}
   .fw{background:#25D366}
- 
+
   @media (max-width:900px){
     .hero-grid,.about,.formwrap,.src-grid{grid-template-columns:1fr}
     .cards,.split{grid-template-columns:1fr}
@@ -314,7 +314,7 @@
 </style>
 </head>
 <body>
- 
+
 <header class="site">
   <div class="nav">
     <div class="brand">
@@ -337,7 +337,7 @@
     </div>
   </div>
 </header>
- 
+
 <!-- ================= HERO / סעיף 1 ================= -->
 <section class="hero">
   <div class="wrap">
@@ -356,7 +356,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ================= מתי נדרש ================= -->
 <section class="alt">
   <div class="wrap">
@@ -388,7 +388,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ================= מקורות זיהום ================= -->
 <section id="sources">
   <div class="wrap">
@@ -515,14 +515,14 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ================= שלבי חקירת אתר ================= -->
 <section id="process" class="alt">
   <div class="wrap">
     <div class="sec-head">
       <h2>שלבי העבודה באתר הנדרש בחקירת קרקע</h2>
     </div>
- 
+
     <div class="chart">
       <div class="chart-step">הגשת סקר היסטורי למשרד להגנת הסביבה עם תכנית לחקירת קרקע</div>
       <div class="chart-connector"></div>
@@ -531,7 +531,7 @@
       <div class="chart-step">ביצוע דיגום קרקע / גז קרקע</div>
       <div class="chart-connector"></div>
       <div class="chart-step">הגשת דו״ח ממצאים והמלצות</div>
- 
+
       <div class="chart-split">
         <div class="chart-branch">
           <div class="chart-outcome-label good">לא נמצא זיהום</div>
@@ -554,7 +554,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ================= עליי ================= -->
 <section id="about">
   <div class="wrap">
@@ -574,7 +574,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ================= טופס ================= -->
 <section id="contact" style="padding-top:20px">
   <div class="wrap">
@@ -586,7 +586,7 @@
           <div><svg viewBox="0 0 20 20" fill="none"><path d="M3.5 5.5h13v9h-13z" stroke="#0F6E63" stroke-width="1.6"/><path d="m3.5 6 6.5 4.8L16.5 6" stroke="#0F6E63" stroke-width="1.6" stroke-linejoin="round"/></svg><span>שיחת ייעוץ ללא עלות</span></div>
         </div>
       </div>
- 
+
       <form class="lead" id="leadForm">
         <div class="row">
           <div class="field">
@@ -621,24 +621,24 @@
     </div>
   </div>
 </section>
- 
+
 <footer>
   <div class="wrap">
     <p>© 2026 שם העסק · סקרים היסטוריים וחקירות קרקע</p>
     <p><a href="tel:0500000000">050-000-0000</a> · <a href="mailto:info@example.co.il">info@example.co.il</a></p>
   </div>
 </footer>
- 
+
 <div class="float">
   <a class="fw" href="https://wa.me/972500000000" aria-label="וואטסאפ">
     <svg viewBox="0 0 24 24" width="27" height="27" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.6 14.2c-.2.7-1.3 1.3-1.9 1.3-.5 0-1.1.2-3.6-.8-3-1.3-4.9-4.4-5-4.6-.2-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5l1 2.3c.1.2.2.4 0 .7l-.4.6-.3.3c-.1.2-.3.4-.1.7.2.3.8 1.4 1.8 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.2.5.1.7-.1l.9-1c.2-.3.4-.2.7-.1l2.2 1c.3.2.5.3.6.4.1.2.1.8-.1 1.5Z"/></svg>
   </a>
 </div>
- 
+
 <script>
   // להפעלת הטופס: הכניסו כתובת endpoint (Formspree / Web3Forms וכד')
   const FORM_ENDPOINT = "";
- 
+
   document.getElementById('leadForm').addEventListener('submit', function(e){
     e.preventDefault();
     const msg = document.getElementById('msg');
@@ -662,7 +662,6 @@
       });
   });
 </script>
- 
+
 </body>
 </html>
- 
