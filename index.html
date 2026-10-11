@@ -30,7 +30,7 @@
   body{
     margin:0;background:var(--bg);color:var(--ink);
     font-family:'Heebo',sans-serif;line-height:1.7;font-size:17px;
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:antialiased;text-align:center;
   }
   h1,h2,h3,h4{margin:0;font-family:'Rubik',sans-serif;font-weight:700;line-height:1.25}
   p{margin:0}
@@ -81,14 +81,14 @@
       radial-gradient(1100px 520px at 88% -8%, #EAF3F1 0%, rgba(234,243,241,0) 62%),
       var(--bg);
     padding:64px 0 0}
-  .hero-grid{display:block;max-width:900px;margin:0 auto;text-align:center}
+  .hero-grid{display:block;max-width:none;margin:0 auto;text-align:center}
   .eyebrow{
     display:inline-flex;align-items:center;gap:9px;background:var(--accent-soft);
     color:var(--accent-dark);font-weight:700;font-size:.9rem;
     padding:7px 15px;border-radius:100px;margin-bottom:22px;
   }
   .eyebrow svg{width:16px;height:16px;flex:none}
-  .hero h1{font-size:clamp(1.7rem,3.1vw,2.7rem);letter-spacing:-.01em;white-space:nowrap}
+  .hero h1{font-size:clamp(1.5rem,3vw,2.3rem);letter-spacing:-.01em;white-space:nowrap}
   .hero h1 em{font-style:normal;color:var(--accent);}
   .hero .lede{margin:22px auto 0;font-size:1.1rem;color:var(--mid);max-width:68ch}
   .hero-actions{margin-top:30px;display:flex;gap:13px;flex-wrap:wrap;justify-content:center}
@@ -127,8 +127,8 @@
     background:var(--amber-soft);letter-spacing:.02em;padding:5px 14px;
     border-radius:100px;margin-bottom:16px;
   }
-  .sec-head{max-width:820px;margin:0 auto 46px;text-align:center}
-  .sec-head h2{font-size:clamp(1.5rem,2.6vw,2.15rem);letter-spacing:-.01em;white-space:nowrap}
+  .sec-head{max-width:none;margin:0 auto 46px;text-align:center}
+  .sec-head h2{font-size:clamp(1.4rem,2.4vw,2rem);letter-spacing:-.01em;white-space:nowrap}
   .sec-head p{margin:15px auto 0;color:var(--mid);font-size:1.05rem;max-width:62ch}
   @media (max-width:640px){ .sec-head h2{white-space:normal} }
   .alt{background:var(--panel);border-block:1px solid var(--line)}
@@ -146,6 +146,7 @@
   .card .ic svg{width:22px;height:22px}
   .card h3{font-family:'Heebo',sans-serif;font-weight:700;font-size:1.1rem}
   .card p{margin-top:9px;color:var(--mid);font-size:.98rem}
+  .card > div:last-child{flex:1}
 
   /* about */
   .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
@@ -189,36 +190,11 @@
   .panel li:last-child{border-bottom:none}
   .panel li svg{width:18px;height:18px;flex:none;margin-top:6px}
 
-  .prose{max-width:100%;margin:0 auto}
-  .sources-layout{
-    display:flex;
-    align-items:center;
-    gap:40px;
-  }
-  .sources-text{
-    flex:1;
-  }
-  .sources-image{
-    flex:0 0 450px;
-    max-width:100%;
-  }
-  .sources-image img{
-    width:100%;
-    height:auto;
-    border-radius:10px;
-    border:1px solid var(--line);
-    box-shadow:0 10px 30px -15px rgba(16,27,30,.3);
-  }
-  @media(max-width:900px){
-    .sources-layout{
-      flex-direction:column;
-    }
-    .sources-image{
-      flex:none;
-      width:100%;
-    }
-  }
-
+  .prose{max-width:72ch;margin:0 auto}
+  .src-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+  .src-grid .prose{max-width:none;margin:0}
+  .src-fig{margin:0}
+  .src-fig svg{width:100%;height:auto;max-width:520px;margin:0 auto}
   .prose p{color:var(--mid);font-size:1.02rem;margin-bottom:16px}
   .prose p:last-child{margin-bottom:0}
 
@@ -229,31 +205,48 @@
   .insight p{color:var(--ink-2);font-size:.99rem;margin:0}
 
   /* ---- flowchart ---- */
-  .chart{max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:stretch}
+  .chart{
+    --cl:rgba(14,124,107,.55);
+    max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:stretch;
+  }
   .chart-step{
-    background:#fff;border:1.5px solid rgba(14,124,107,.3);border-radius:8px;
-    padding:16px 22px;text-align:center;font-weight:700;font-size:.99rem;
-    box-shadow:0 6px 18px -12px rgba(16,27,30,.35);
+    background:var(--accent-soft);border:1.5px solid rgba(14,124,107,.5);border-radius:8px;
+    padding:16px 22px;text-align:center;font-weight:700;font-size:.99rem;color:var(--ink);
   }
   .chart-note{display:block;font-weight:400;font-size:.82rem;color:var(--mid);margin-top:5px}
-  .chart-connector{width:2px;height:26px;background:var(--line);margin:0 auto}
-  .chart-split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:0}
-  .chart-split.sub{margin-top:14px;gap:12px}
-  .chart-branch{display:flex;flex-direction:column}
-  .chart-outcome-label{
-    border-radius:7px;padding:11px 14px;text-align:center;font-weight:700;
-    font-size:.95rem;color:#fff;background:var(--mid);
+  .chart-connector{width:2px;height:26px;background:var(--cl);margin:0 auto}
+
+  /* fork: stem + horizontal rail + one drop into each branch */
+  .chart-split{
+    --g:18px;position:relative;padding-top:40px;
+    display:grid;grid-template-columns:1fr 1fr;gap:var(--g);
   }
-  .chart-outcome-label.good{background:#2F7A4A}
-  .chart-outcome-label.bad{background:var(--alert)}
-  .chart-outcome-label.warn{background:#C7872F}
+  .chart-split.sub{--g:12px}
+  .chart-split::before{
+    content:"";position:absolute;top:0;left:calc(50% - 1px);width:2px;height:26px;background:var(--cl);
+  }
+  .chart-split::after{
+    content:"";position:absolute;top:26px;height:14px;box-sizing:border-box;
+    left:calc(25% - var(--g) / 4 - 1px);right:calc(25% - var(--g) / 4 - 1px);
+    border:2px solid var(--cl);border-bottom:none;
+  }
+
+  .chart-branch{display:flex;flex-direction:column}
+  .chart-branch > .chart-step{border-radius:8px 8px 0 0}
+  .chart-outcome-label{
+    border:1.5px solid rgba(14,124,107,.5);border-radius:8px 8px 0 0;padding:12px 14px;
+    text-align:center;font-weight:700;font-size:.97rem;color:var(--ink);background:var(--accent-soft);
+  }
+  .chart-outcome-label.good{background:#D6ECDD;border-color:#7FB893}
+  .chart-outcome-label.bad{background:#F7DCCD;border-color:#D99C7C}
   .chart-result{
-    background:#fff;border:1.5px solid rgba(14,124,107,.3);border-top:none;
-    border-radius:0 0 7px 7px;padding:14px 16px;font-size:.88rem;color:var(--mid);
-    box-shadow:0 6px 18px -12px rgba(16,27,30,.35);
+    background:var(--accent-soft);border:1.5px solid rgba(14,124,107,.5);border-top:none;
+    border-radius:0 0 8px 8px;padding:14px 16px;font-size:.9rem;color:var(--ink-2);flex:1;
   }
   @media (max-width:760px){
     .chart-split, .chart-split.sub{grid-template-columns:1fr}
+    .chart-split::after{display:none}
+    .chart-split::before{height:40px}
   }
 
   .notice{
@@ -276,7 +269,7 @@
   .formside h2{font-size:clamp(1.7rem,2.8vw,2.2rem)}
   .formside p{margin-top:14px;color:var(--mid)}
   .assure{margin-top:26px;display:grid;gap:14px}
-  .assure div{display:flex;gap:11px;align-items:flex-start;color:var(--mid);font-size:.97rem}
+  .assure div{display:flex;gap:11px;align-items:center;justify-content:center;color:var(--mid);font-size:.97rem}
   .assure svg{width:19px;height:19px;flex:none;margin-top:4px}
   form.lead{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:32px;
     box-shadow:0 16px 44px -30px rgba(16,27,30,.5)}
@@ -284,7 +277,7 @@
   .field{margin-bottom:15px}
   .field label{display:block;font-size:.91rem;font-weight:700;margin-bottom:6px}
   .field input,.field textarea{
-    width:100%;padding:12px 14px;font-family:'Heebo',sans-serif;font-size:1rem;
+    width:100%;padding:12px 14px;font-family:'Heebo',sans-serif;font-size:1rem;text-align:start;
     border:1.5px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink)
   }
   .field input:focus,.field textarea:focus{border-color:var(--accent);background:#fff}
@@ -294,7 +287,7 @@
   #msg.show{display:block}
 
   footer{background:var(--ink);color:#93A9A8;padding:44px 0;font-size:.92rem}
-  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  footer .wrap{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
   footer a{color:#DCE6E5;text-decoration:none}
 
   .float{position:fixed;bottom:22px;left:22px;z-index:60;display:flex;gap:10px}
@@ -303,7 +296,7 @@
   .fw{background:#25D366}
 
   @media (max-width:900px){
-    .hero-grid,.about,.formwrap{grid-template-columns:1fr}
+    .hero-grid,.about,.formwrap,.src-grid{grid-template-columns:1fr}
     .cards,.split{grid-template-columns:1fr}
     .flow{grid-template-columns:1fr 1fr;gap:28px 16px}
     .frail{display:none}
@@ -336,7 +329,7 @@
     <div class="nav-links">
       <a href="#about">אודות</a>
       <a href="#sources">מקורות זיהום</a>
-      <a href="#process">שלבי עבודה</a>
+      <a href="#process">שלבי חקירת אתר</a>
       <a href="#contact">צור קשר</a>
     </div>
     <div class="nav-right">
@@ -379,13 +372,7 @@
         </div>
       </div>
       <div class="card">
-        <div class="ic">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M8 19c0-2 1.5-3 1.5-5s-1.5-3-1.5-5 1.5-3 1.5-5" stroke="#0F6E63" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M12 19c0-2 1.5-3 1.5-5s-1.5-3-1.5-5 1.5-3 1.5-5" stroke="#0F6E63" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M16 19c0-2 1.5-3 1.5-5s-1.5-3-1.5-5 1.5-3 1.5-5" stroke="#0F6E63" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-        </div>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 20c2.2-3-2.2-5 0-8s2.2-5 0-8M12 20c2.2-3-2.2-5 0-8s2.2-5 0-8M18 20c2.2-3-2.2-5 0-8s2.2-5 0-8" stroke="#0F6E63" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg></div>
         <div>
           <h3>גזי קרקע</h3>
           <p>ייתכן והאתר נמצא באזור בו קיימים זיהומים בתת הקרקע ובמי התהום היוצרים גזי קרקע שעלולים לחדור למבנים ולהוות מפגע בריאותי.</p>
@@ -408,41 +395,146 @@
     <div class="sec-head">
       <h2>מקורות זיהום</h2>
     </div>
+    <div class="src-grid">
     <div class="prose">
-      <div class="sources-layout">
-        <div class="sources-text">
-          <p>חקירת קרקע מתמקדת בשני תוואים: קרקע וגזי קרקע. זיהום בקרקע נובע בדרך כלל מפעילות מוקדית/נקודתית שהתרחשה או עדיין מתקיימת באתר — דוגמת תשתיות אחסון של חומרים מסוכנים, מכלים תת-קרקעיים שדלפו ופעילות תעשייתית.</p>
-          <p>לצד הזיהום הנקודתי בקרקע, מי תהום מזוהמים מהווים מקור מרכזי ורחב היקף לגזי קרקע עקב נידוף חומרים אורגניים נדיפים (VOCs) וסמי-נדיפים (SVOCs). מרבית הזיהומים במי התהום הם היסטוריים, ומקורם בחומרים שחלחלו בעבר לתת-הקרקע ממוקדים שונים: תעשיות ביטחוניות (לדוגמה מפעלי תע"ש) ומכבסות ניקוי יבש (ממסים מוכלרים כגון PCE ו-TCE), מפעלי מתכות וציפויים (מדללים וממסים), ותחנות ותשתיות דלק (פחמימנים קלים כגון BTEX).</p>
-          <p>המזהמים המגיעים למי התהום מוסעים איתם במרחב ויוצרים פלומת זיהום הנפרשת על פני מאות מטרים ואף קילומטרים מעבר לגבולות האתר המקורי. במהלך הסעתם, החומרים עוברים מפאזה מומסת לפאזה גזית, מפעפעים בתווך הלא-רווי, ומייצרים סיכון משמעותי לחדירת גזי קרקע למבנים ולפגיעה בבריאות האנשים השוהים במבנה.</p>
-        </div>
-        <div class="sources-image">
-          <img src="sources-diagram.png" alt="תרשים מקורות זיהום קרקע, מי תהום וגזי קרקע">
-        </div>
-      </div>
+      <p>חקירת קרקע מתמקדת בשני תוואים: קרקע וגזי קרקע. זיהום בקרקע נובע בדרך כלל מפעילות מוקדית/נקודתית שהתרחשה או עדיין מתקיימת באתר — דוגמת תשתיות אחסון של חומרים מסוכנים, מכלים תת-קרקעיים שדלפו ופעילות תעשייתית.</p>
+      <p>לצד הזיהום הנקודתי בקרקע, מי תהום מזוהמים מהווים מקור מרכזי ורחב היקף לגזי קרקע עקב נידוף חומרים אורגניים נדיפים (VOCs) וסמי-נדיפים (SVOCs). מרבית הזיהומים במי התהום הם היסטוריים, ומקורם בחומרים שחלחלו בעבר לתת-הקרקע ממוקדים שונים: תעשיות ביטחוניות (לדוגמה מפעלי תע"ש) ומכבסות ניקוי יבש (ממסים מוכלרים כגון PCE ו-TCE), מפעלי מתכות וציפויים (מדללים וממסים), ותחנות ותשתיות דלק (פחמימנים קלים כגון BTEX).</p>
+      <p>המזהמים המגיעים למי התהום מוסעים איתם במרחב ויוצרים פלומת זיהום הנפרשת על פני מאות מטרים ואף קילומטרים מעבר לגבולות האתר המקורי. במהלך הסעתם, החומרים עוברים מפאזה מומסת לפאזה גזית, מפעפעים בתווך הלא-רווי, ומייצרים סיכון משמעותי לחדירת גזי קרקע למבנים ולפגיעה בבריאות האנשים השוהים במבנה.</p>
+    </div>
+      <figure class="src-fig">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" width="600" height="720" role="img" aria-labelledby="gm-title gm-desc" direction="rtl" font-family="Heebo, Arial, 'Segoe UI', sans-serif">
+<title id="gm-title">מעבר גזי קרקע ממי תהום אל קומה תת-קרקעית</title>
+<desc id="gm-desc">חתך סכמטי: מזהמים מסוג VOCs ו-SVOCs במי התהום נודפים, עולים דרך התווך הלא רווי ונכנסים לקומה התת-קרקעית של מבנה.</desc>
+<defs>
+<clipPath id="gm-clip"><rect x="0" y="0" width="600" height="720" rx="14"/></clipPath>
+<pattern id="gm-soil" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r="1.3" fill="#CDB88F"/><circle cx="11" cy="10" r="1.6" fill="#CDB88F"/><circle cx="14" cy="2.5" r="0.9" fill="#D9C7A3"/><circle cx="6" cy="13" r="1" fill="#D9C7A3"/></pattern>
+</defs>
+<g clip-path="url(#gm-clip)">
+<rect width="600" height="720" fill="#FFFFFF"/>
+<rect x="0" y="130" width="600" height="340" fill="#EADBC1"/>
+<rect x="0" y="130" width="600" height="340" fill="url(#gm-soil)"/>
+<rect x="0" y="470" width="600" height="180" fill="#BCDCEA"/>
+<path d="M0,470 Q15,465 30,470 Q45,465 60,470 Q75,465 90,470 Q105,465 120,470 Q135,465 150,470 Q165,465 180,470 Q195,465 210,470 Q225,465 240,470 Q255,465 270,470 Q285,465 300,470 Q315,465 330,470 Q345,465 360,470 Q375,465 390,470 Q405,465 420,470 Q435,465 450,470 Q465,465 480,470 Q495,465 510,470 Q525,465 540,470 Q555,465 570,470 Q585,465 600,470" fill="none" stroke="#4F9BB8" stroke-width="2.5"/>
+<ellipse cx="305" cy="562" rx="150" ry="64" fill="#E08A2C" opacity=".13"/>
+<rect x="190" y="50" width="220" height="76" fill="#E4E9EB" stroke="#6F7C81" stroke-width="2"/>
+<rect x="180" y="42" width="240" height="9" fill="#6F7C81"/>
+<rect x="212" y="72" width="30" height="28" fill="#FFFFFF" stroke="#8FA0A5" stroke-width="1.5"/>
+<rect x="285" y="72" width="30" height="28" fill="#FFFFFF" stroke="#8FA0A5" stroke-width="1.5"/>
+<rect x="358" y="72" width="30" height="28" fill="#FFFFFF" stroke="#8FA0A5" stroke-width="1.5"/>
+<rect x="198" y="134" width="204" height="120" fill="#F6FAFA"/>
+<rect x="190" y="126" width="220" height="8" fill="#6F7C81"/>
+<rect x="190" y="134" width="8" height="132" fill="#6F7C81"/>
+<rect x="402" y="134" width="8" height="132" fill="#6F7C81"/>
+<rect x="190" y="254" width="220" height="12" fill="#6F7C81"/>
+<rect x="253" y="254" width="14" height="12" fill="#F6FAFA"/>
+<rect x="333" y="254" width="14" height="12" fill="#F6FAFA"/>
+<path d="M150.0,466.0 L152.1,463.4 L154.2,460.7 L155.9,458.1 L157.3,455.5 L158.3,452.9 L158.8,450.2 L158.8,447.6 L158.4,445.0 L157.6,442.3 L156.6,439.7 L155.5,437.1 L154.4,434.5 L153.4,431.8 L152.7,429.2 L152.4,426.6 L152.5,423.9 L153.1,421.3 L154.3,418.7 L155.9,416.1 L157.9,413.4 L160.3,410.8 L162.9,408.2 L165.7,405.5 L168.4,402.9 L171.1,400.3 L173.6,397.7 L175.7,395.0 L177.6,392.4 L179.1,389.8 L180.2,387.1 L181.0,384.5 L181.4,381.9 L181.7,379.3 L181.9,376.6 L182.0,374.0 L182.2,371.4 L182.5,368.7 L183.0,366.1 L183.8,363.5 L184.9,360.9 L186.2,358.2 L187.8,355.6 L189.7,353.0 L191.7,350.3 L193.8,347.7 L196.0,345.1 L198.1,342.5 L200.1,339.8 L202.0,337.2 L203.6,334.6 L205.0,331.9 L206.2,329.3 L207.1,326.7 L207.8,324.1 L208.3,321.4 L208.6,318.8 L208.9,316.2 L209.2,313.5 L209.4,310.9 L209.7,308.3 L210.1,305.7 L210.5,303.0 L211.0,300.4 L211.6,297.8 L212.1,295.1 L212.7,292.5 L213.2,289.9 L213.6,287.3 L213.9,284.6 L214.0,282.0" fill="none" stroke="#C25A2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+<path d="M214.0,271.0 L207.5,283.0 L220.5,283.0 Z" fill="#C25A2B"/>
+<path d="M240.0,466.0 L242.2,463.4 L244.1,460.7 L245.6,458.1 L246.5,455.5 L246.9,452.9 L246.6,450.2 L245.8,447.6 L244.5,445.0 L242.8,442.3 L241.1,439.7 L239.4,437.1 L238.0,434.5 L237.0,431.8 L236.5,429.2 L236.6,426.6 L237.2,423.9 L238.4,421.3 L240.0,418.7 L241.9,416.1 L244.0,413.4 L245.9,410.8 L247.7,408.2 L249.2,405.5 L250.2,402.9 L250.7,400.3 L250.8,397.7 L250.5,395.0 L249.8,392.4 L248.9,389.8 L247.9,387.1 L246.9,384.5 L246.2,381.9 L245.7,379.3 L245.7,376.6 L246.0,374.0 L246.7,371.4 L247.8,368.7 L249.1,366.1 L250.6,363.5 L252.1,360.9 L253.6,358.2 L254.9,355.6 L256.0,353.0 L256.8,350.3 L257.2,347.7 L257.4,345.1 L257.3,342.5 L256.9,339.8 L256.5,337.2 L256.0,334.6 L255.6,331.9 L255.3,329.3 L255.2,326.7 L255.3,324.1 L255.6,321.4 L256.1,318.8 L256.7,316.2 L257.4,313.5 L258.2,310.9 L258.9,308.3 L259.5,305.7 L260.0,303.0 L260.3,300.4 L260.5,297.8 L260.6,295.1 L260.5,292.5 L260.3,289.9 L260.2,287.3 L260.1,284.6 L260.0,282.0" fill="none" stroke="#C25A2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+<path d="M260,282 L260,226" fill="none" stroke="#C25A2B" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M260.0,212.0 L253.5,224.0 L266.5,224.0 Z" fill="#C25A2B"/>
+<path d="M360.0,466.0 L362.1,463.4 L364.0,460.7 L365.4,458.1 L366.2,455.5 L366.3,452.9 L365.8,450.2 L364.6,447.6 L363.0,445.0 L361.0,442.3 L358.9,439.7 L356.8,437.1 L354.9,434.5 L353.4,431.8 L352.4,429.2 L351.9,426.6 L351.9,423.9 L352.5,421.3 L353.5,418.7 L354.7,416.1 L356.0,413.4 L357.3,410.8 L358.4,408.2 L359.1,405.5 L359.3,402.9 L359.1,400.3 L358.4,397.7 L357.2,395.0 L355.7,392.4 L354.0,389.8 L352.1,387.1 L350.4,384.5 L348.8,381.9 L347.5,379.3 L346.5,376.6 L346.0,374.0 L345.8,371.4 L346.0,368.7 L346.5,366.1 L347.2,363.5 L347.9,360.9 L348.5,358.2 L349.0,355.6 L349.3,353.0 L349.2,350.3 L348.9,347.7 L348.3,345.1 L347.4,342.5 L346.3,339.8 L345.1,337.2 L344.0,334.6 L342.9,331.9 L341.9,329.3 L341.1,326.7 L340.6,324.1 L340.3,321.4 L340.2,318.8 L340.3,316.2 L340.6,313.5 L340.8,310.9 L341.1,308.3 L341.3,305.7 L341.4,303.0 L341.5,300.4 L341.3,297.8 L341.1,295.1 L340.9,292.5 L340.6,289.9 L340.3,287.3 L340.1,284.6 L340.0,282.0" fill="none" stroke="#C25A2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+<path d="M340,282 L340,226" fill="none" stroke="#C25A2B" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M340.0,212.0 L333.5,224.0 L346.5,224.0 Z" fill="#C25A2B"/>
+<path d="M450.0,466.0 L452.1,463.4 L453.9,460.7 L455.2,458.1 L456.1,455.5 L456.4,452.9 L456.1,450.2 L455.2,447.6 L453.7,445.0 L451.8,442.3 L449.5,439.7 L447.0,437.1 L444.4,434.5 L441.8,431.8 L439.4,429.2 L437.3,426.6 L435.5,423.9 L434.2,421.3 L433.2,418.7 L432.7,416.1 L432.5,413.4 L432.6,410.8 L432.9,408.2 L433.3,405.5 L433.6,402.9 L433.8,400.3 L433.7,397.7 L433.3,395.0 L432.5,392.4 L431.4,389.8 L429.8,387.1 L427.9,384.5 L425.7,381.9 L423.2,379.3 L420.6,376.6 L418.0,374.0 L415.4,371.4 L413.0,368.7 L410.8,366.1 L408.9,363.5 L407.2,360.9 L405.9,358.2 L404.9,355.6 L404.1,353.0 L403.5,350.3 L403.1,347.7 L402.8,345.1 L402.5,342.5 L402.1,339.8 L401.6,337.2 L401.0,334.6 L400.2,331.9 L399.2,329.3 L398.0,326.7 L396.8,324.1 L395.4,321.4 L394.0,318.8 L392.5,316.2 L391.2,313.5 L389.9,310.9 L388.8,308.3 L387.9,305.7 L387.1,303.0 L386.6,300.4 L386.2,297.8 L386.0,295.1 L385.9,292.5 L385.9,289.9 L385.9,287.3 L386.0,284.6 L386.0,282.0" fill="none" stroke="#C25A2B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+<path d="M386.0,271.0 L379.5,283.0 L392.5,283.0 Z" fill="#C25A2B"/>
+<circle cx="165.4" cy="434.5" r="3.4" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M176.7,401.4 L180.8,405.5 L176.7,409.7 L172.5,405.5 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="193.0" cy="374.0" r="3.4" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M185.0,341.0 L189.1,345.1 L185.0,349.2 L180.9,345.1 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="197.9" cy="316.2" r="3.4" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="227.0" cy="434.5" r="3.4" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="238.2" cy="405.5" r="3.4" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M235.0,369.9 L239.1,374.0 L235.0,378.1 L230.9,374.0 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="268.4" cy="345.1" r="3.4" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M267.7,312.0 L271.8,316.2 L267.7,320.3 L263.6,316.2 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<path d="M365.9,430.3 L370.0,434.5 L365.9,438.6 L361.8,434.5 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="370.1" cy="405.5" r="3.4" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="357.0" cy="374.0" r="3.4" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="337.3" cy="345.1" r="3.4" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="329.3" cy="316.2" r="3.4" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="433.4" cy="434.5" r="3.4" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M422.3,401.4 L426.4,405.5 L422.3,409.7 L418.2,405.5 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="407.0" cy="374.0" r="3.4" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M413.8,341.0 L417.9,345.1 L413.8,349.2 L409.7,345.1 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="403.5" cy="316.2" r="3.4" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="296.8" cy="570.4" r="4.6" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M402.9,551.7 L408.4,557.2 L402.9,562.7 L397.4,557.2 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="236.5" cy="563.7" r="4.6" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="336.7" cy="603.0" r="4.6" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M216.2,529.0 L221.7,534.5 L216.2,540.0 L210.7,534.5 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="215.4" cy="605.4" r="4.6" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="313.9" cy="500.3" r="4.6" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M201.8,551.5 L207.3,557.0 L201.8,562.5 L196.3,557.0 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="294.1" cy="609.9" r="4.6" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="297.9" cy="530.9" r="4.6" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M384.0,585.6 L389.5,591.1 L384.0,596.6 L378.5,591.1 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="265.9" cy="524.2" r="4.6" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="367.4" cy="548.1" r="4.6" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M411.9,592.6 L417.4,598.1 L411.9,603.6 L406.4,598.1 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="374.3" cy="516.9" r="4.6" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="320.8" cy="554.6" r="4.6" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M263.4,610.4 L268.9,615.9 L263.4,621.4 L257.9,615.9 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<path d="M212,160 q12,-9 24,0 t24,0 t24,0 t24,0 t24,0 t24,0 t24,0" fill="none" stroke="#E08A2C" stroke-width="1.6" opacity=".35"/>
+<path d="M212,188 q12,-9 24,0 t24,0 t24,0 t24,0 t24,0 t24,0 t24,0" fill="none" stroke="#E08A2C" stroke-width="1.6" opacity=".35"/>
+<circle cx="226.0" cy="226.0" r="4.8" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M246.0,232.2 L251.8,238.0 L246.0,243.8 L240.2,238.0 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="292.0" cy="228.0" r="4.8" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M318.0,230.2 L323.8,236.0 L318.0,241.8 L312.2,236.0 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="372.0" cy="230.0" r="4.8" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="300.0" cy="196.0" r="4.8" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M228.0,170.2 L233.8,176.0 L228.0,181.8 L222.2,176.0 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="268.0" cy="158.0" r="4.8" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="330.0" cy="168.0" r="4.8" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M372.0,146.2 L377.8,152.0 L372.0,157.8 L366.2,152.0 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<circle cx="214.0" cy="148.0" r="4.8" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<circle cx="386.0" cy="200.0" r="4.8" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<path d="M300.0,140.2 L305.8,146.0 L300.0,151.8 L294.2,146.0 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<text x="92" y="296" text-anchor="middle" font-size="17" font-weight="700" fill="#161B22" direction="rtl">קרקע</text>
+<text x="92" y="318" text-anchor="middle" font-size="13.5" font-weight="500" fill="#4A5A5F" direction="rtl">(תווך לא רווי)</text>
+<text x="92" y="548" text-anchor="middle" font-size="17" font-weight="700" fill="#161B22" direction="rtl">מי תהום</text>
+<text x="92" y="176" text-anchor="middle" font-size="15" font-weight="700" fill="#161B22" direction="rtl">קומה תת-קרקעית</text>
+<path d="M158,172 L188,172" stroke="#161B22" stroke-width="1.4"/><circle cx="190" cy="172" r="3.2" fill="#161B22"/>
+<text x="500" y="300" text-anchor="middle" font-size="17" font-weight="700" fill="#161B22" direction="rtl">גזי קרקע</text>
+<text x="500" y="321" text-anchor="middle" font-size="13.5" font-weight="500" fill="#4A5A5F" direction="rtl">נודפים ממי התהום</text>
+<text x="500" y="340" text-anchor="middle" font-size="13.5" font-weight="500" fill="#4A5A5F" direction="rtl">ועולים אל המבנה</text>
+<text x="500" y="536" text-anchor="middle" font-size="16" font-weight="700" fill="#161B22" direction="rtl">מזהמים מומסים</text>
+<text x="500" y="556" text-anchor="middle" font-size="12.5" font-weight="500" fill="#4A5A5F" direction="rtl">ממשפחות VOCs ו-SVOCs</text>
+<text x="500" y="168" text-anchor="middle" font-size="15" font-weight="700" fill="#161B22" direction="rtl">גזים בתוך</text>
+<text x="500" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#161B22" direction="rtl">הקומה התת-קרקעית</text>
+<path d="M424,172 L392,162" stroke="#161B22" stroke-width="1.4" fill="none"/><circle cx="390" cy="161.5" r="3.2" fill="#161B22"/>
+<line x1="0" y1="650" x2="600" y2="650" stroke="#D5DADB" stroke-width="1.2"/>
+<circle cx="572.0" cy="686.0" r="5.5" fill="#E08A2C" stroke="#B96E1C" stroke-width="1.2"/>
+<text x="448" y="691" text-anchor="middle" font-size="13" font-weight="600" fill="#161B22" direction="rtl">VOCs – חומרים אורגניים נדיפים</text>
+<path d="M316.0,679.5 L322.5,686.0 L316.0,692.5 L309.5,686.0 Z" fill="#7B3F8D" stroke="#58286A" stroke-width="1.2"/>
+<text x="174" y="691" text-anchor="middle" font-size="13" font-weight="600" fill="#161B22" direction="rtl">SVOCs – חומרים אורגניים סמי-נדיפים</text>
+</g>
+<rect x="0.75" y="0.75" width="598.5" height="718.5" rx="14" fill="none" stroke="#161B22" stroke-opacity=".16" stroke-width="1.5"/>
+</svg>
+      </figure>
     </div>
   </div>
 </section>
 
 <!-- ================= שלבי חקירת אתר ================= -->
-<section id="process">
+<section id="process" class="alt">
   <div class="wrap">
     <div class="sec-head">
       <h2>שלבי העבודה באתר הנדרש בחקירת קרקע</h2>
     </div>
 
     <div class="chart">
-      <div class="chart-step">הגשת סקר היסטורי ותכנית חקירה לאישור המשרד להגנת הסביבה</div>
+      <div class="chart-step">הגשת סקר היסטורי למשרד להגנת הסביבה עם תכנית לחקירת קרקע</div>
       <div class="chart-connector"></div>
       <div class="chart-step">אישור הסקר ותכנית החקירה ע״י המשרד<span class="chart-note">* ככל ואין דרישה להשלמות</span></div>
       <div class="chart-connector"></div>
       <div class="chart-step">ביצוע דיגום קרקע / גז קרקע</div>
       <div class="chart-connector"></div>
       <div class="chart-step">הגשת דו״ח ממצאים והמלצות</div>
-      <div class="chart-connector"></div>
 
       <div class="chart-split">
         <div class="chart-branch">
-          <div class="chart-outcome-label good">אין זיהום</div>
+          <div class="chart-outcome-label good">לא נמצא זיהום</div>
           <div class="chart-result">סיום חקירת הקרקע וקבלת אישור NFA מהמשרד להגנת הסביבה</div>
         </div>
         <div class="chart-branch">
@@ -464,7 +556,7 @@
 </section>
 
 <!-- ================= עליי ================= -->
-<section id="about" class="alt">
+<section id="about">
   <div class="wrap">
     <div class="about">
       <div class="portrait">
@@ -489,10 +581,8 @@
     <div class="formwrap">
       <div class="formside">
         <h2>צור קשר</h2>
-        <p>מלאו את הפרטים ואחזור אליכם להמשך בירור וקבלת הצעת מחיר. אם יסתבר שהנכס לא נדרש בסקר — אגיד לכם את זה.</p>
+        <p>מלאו את הפרטים ואחזור אליכם להמשך בירור וקבלת הצעת מחיר. אם יסתבר והנכס לא נדרש בסקר — אגיד לכם את זה.</p>
         <div class="assure">
-          <div><svg viewBox="0 0 20 20" fill="none"><path d="M10 2.5 16.5 5v4.7c0 3.9-2.7 6.2-6.5 7-3.8-.8-6.5-3.1-6.5-7V5L10 2.5Z" stroke="#0F6E63" stroke-width="1.6" stroke-linejoin="round"/></svg><span>הפרטים נשארים אצלי בלבד ולא מועברים לצד שלישי</span></div>
-          <div><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#0F6E63" stroke-width="1.6"/><path d="M10 6v4.3l2.8 1.7" stroke="#0F6E63" stroke-width="1.6" stroke-linecap="round"/></svg><span>מענה תוך יום עסקים אחד</span></div>
           <div><svg viewBox="0 0 20 20" fill="none"><path d="M3.5 5.5h13v9h-13z" stroke="#0F6E63" stroke-width="1.6"/><path d="m3.5 6 6.5 4.8L16.5 6" stroke="#0F6E63" stroke-width="1.6" stroke-linejoin="round"/></svg><span>שיחת ייעוץ ללא עלות</span></div>
         </div>
       </div>
@@ -546,6 +636,7 @@
 </div>
 
 <script>
+  // להפעלת הטופס: הכניסו כתובת endpoint (Formspree / Web3Forms וכד')
   const FORM_ENDPOINT = "";
 
   document.getElementById('leadForm').addEventListener('submit', function(e){
