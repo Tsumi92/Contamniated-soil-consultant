@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דרכי נועם | ייעוץ סביבתי וסקרי קרקע להיתרי בנייה וטופס 4</title>
+  <meta name="description" content="סקר קרקע מהיר ומדויק להיתר בנייה וטופס 4. מעטפת הנדסית מלאה של סקרים היסטוריים, דיגום קרקע וגז קרקע מול המשרד להגנת הסביבה והוועדות המקומיות. הצעת מחיר תוך 24 שעות.">
+  
+  <!-- Google Fonts: Heebo & Assistant -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- מסתיר את אזהרת הקונסול של Tailwind CDN (לא משנה את התנהגות הדף) -->
+  <script>
+    (function () {
+      var warn = console.warn;
+      console.warn = function () {
+        var first = arguments[0];
+        if (typeof first === 'string' && first.indexOf('cdn.tailwindcss.com should not be used in production') !== -1) return;
+        return warn.apply(console, arguments);
+      };
+    })();
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              slate: '#0f172a',
+              navy: '#1e293b',
+              emerald: '#059669',
+              emeraldDark: '#047857',
+              emeraldLight: '#ecfdf5',
+              amber: '#d97706',
+              amberLight: '#fffbeb',
+            }
+          },
+          fontFamily: {
+            sans: ['Heebo', 'Assistant', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-emerald': '0 0 25px -5px rgba(5, 150, 105, 0.4)',
+            'card-hover': '0 20px 30px -10px rgba(15, 23, 42, 0.08)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Heebo', 'Assistant', sans-serif;
+    }
+    
+    /* Subtle dot grid pattern */
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* Pulse animation for WhatsApp badge */
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 12px rgba(5, 150, 105, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
+    }
+    .pulse-ring {
+      animation: pulse-ring 2.2s infinite cubic-bezier(0.45, 0, 0.55, 1);
+    }
+
+    /* Custom accordion styles */
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- ================= 1. STICKY HEADER (NAVBAR) ================= -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/95 border-b border-slate-200/80 transition-all duration-300 shadow-sm" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <!-- Logo (Right Side) -->
+        <a href="#" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-lg p-1 shrink-0 whitespace-nowrap">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 flex items-center justify-center text-emerald-400 shadow-md group-hover:scale-105 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-6 h-6"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/></svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-extrabold text-slate-900 tracking-tight flex items-center gap-1">
+              דרכי נועם
+              <span class="text-emerald-600 text-xs font-semibold px-1.5 py-0.5 bg-emerald-50 rounded border border-emerald-200">הנדסה</span>
+            </span>
+            <span class="text-xs text-slate-500 font-medium">ייעוץ וסקרי קרקע להיתר בנייה</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links (Center) -->
+        <nav class="hidden xl:flex items-center gap-8">
+          <a href="#services" class="text-sm font-semibold text-slate-700 hover:text-emerald-600 transition-colors py-1 whitespace-nowrap">השירותים שלנו</a>
+          <a href="#process" class="text-sm font-semibold text-slate-700 hover:text-emerald-600 transition-colors py-1 whitespace-nowrap">תהליך העבודה</a>
+          <a href="#why-us" class="text-sm font-semibold text-slate-700 hover:text-emerald-600 transition-colors py-1 whitespace-nowrap">למה אנחנו?</a>
+          <a href="#faq" class="text-sm font-semibold text-slate-700 hover:text-emerald-600 transition-colors py-1 whitespace-nowrap">שאלות נפוצות</a>
+          <a href="#contact" class="text-sm font-semibold text-slate-700 hover:text-emerald-600 transition-colors py-1 whitespace-nowrap">יצירת קשר</a>
+        </nav>
+
+        <!-- CTAs (Left Side) -->
+        <div class="hidden sm:flex items-center gap-3 shrink-0">
+          <!-- Direct Phone Button -->
+          <a href="tel:0508912345" class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:text-slate-900 hover:border-slate-400 font-semibold text-sm transition bg-white shadow-xs whitespace-nowrap">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-emerald-600"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/></svg>
+            <span dir="ltr" class="whitespace-nowrap">050-891-2345</span>
+          </a>
+
+          <!-- Primary WhatsApp CTA -->
+          <a href="https://wa.me/972508912345?text=%D7%94%D7%99%D7%99%20%D7%93%D7%A8%D7%9B%D7%99%20%D7%A0%D7%95%D7%A2%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%A6%D7%A8%D7%99%D7%9A%20%D7%A1%D7%A7%D7%A8%20%D7%A7%D7%A8%D7%A7%D7%A2%20%D7%9C%D7%94%D7%99%D7%AA%D7%A8%20%D7%91%D7%A0%D7%99%D7%99%D7%94%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D" 
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            <span>ייעוץ מהיר בוואטסאפ</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" id="mobileMenuBtn" aria-label="פתח תפריט ניווט" class="xl:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" id="menuIcon" class="w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden xl:hidden border-t border-slate-200 bg-white/98 px-4 pt-3 pb-6 shadow-xl">
+      <div class="flex flex-col gap-3">
+        <a href="#services" class="mobile-nav-link text-base font-semibold text-slate-800 hover:text-emerald-600 py-2 border-b border-slate-100">השירותים שלנו</a>
+        <a href="#process" class="mobile-nav-link text-base font-semibold text-slate-800 hover:text-emerald-600 py-2 border-b border-slate-100">תהליך העבודה</a>
+        <a href="#why-us" class="mobile-nav-link text-base font-semibold text-slate-800 hover:text-emerald-600 py-2 border-b border-slate-100">למה אנחנו?</a>
+        <a href="#faq" class="mobile-nav-link text-base font-semibold text-slate-800 hover:text-emerald-600 py-2 border-b border-slate-100">שאלות נפוצות</a>
+        <a href="#contact" class="mobile-nav-link text-base font-semibold text-slate-800 hover:text-emerald-600 py-2 border-b border-slate-100">יצירת קשר</a>
+        
+        <div class="flex flex-col gap-2.5 pt-3">
+          <a href="tel:0508912345" class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl border border-slate-300 font-bold text-slate-800 bg-slate-50">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-emerald-600"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/></svg>
+            <span>חייגו: 050-891-2345</span>
+          </a>
+          <a href="https://wa.me/972508912345?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A6%D7%A8%D7%99%D7%9A%20%D7%A1%D7%A7%D7%A8%20%D7%A7%D7%A8%D7%A7%D7%A2%20%D7%9C%D7%94%D7%99%D7%AA%D7%A8%20%D7%91%D7%A0%D7%99%D7%99%D7%94" 
+             target="_blank" rel="noopener noreferrer"
+             class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 text-white font-bold shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            <span>ייעוץ מהיר בוואטסאפ</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 2. HERO SECTION ================= -->
+  <section class="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden bg-grid-pattern">
+    <!-- Ambient glow decorative blobs -->
+    <div class="absolute -top-32 right-1/4 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -left-20 w-80 h-80 bg-blue-200/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Right Column (Copy + Quick Action) - 7 cols on desktop -->
+        <div class="lg:col-span-7 flex flex-col items-start text-right">
+          
+          <!-- Trust Badge (Floating Pill) -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs sm:text-sm font-bold mb-6 shadow-xs">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-emerald-600"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <span>מאושר ומותאם לדרישות המשרד להגנת הסביבה</span>
+          </div>
+
+          <!-- H1 Headline -->
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.2] mb-6">
+            סקר קרקע מהיר ומדויק – 
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-700 block mt-1">
+              הדרך הבטוחה להיתר הבנייה שלך
+            </span>
+          </h1>
+
+          <!-- Sub-headline -->
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mb-8">
+            אל תתנו לדרישות הסביבתיות של הוועדה לעכב את היתר הבנייה. אנו מספקים מעטפת מקצועית מלאה — מביצוע סקר היסטורי ודיגום קרקע/גז קרקע, ועד לניהול ההליך מול המשרד להגנת הסביבה וקבלת האישור המיוחל.
+          </p>
+
+          <!-- Bullet Points with checkmark icons -->
+          <div class="space-y-3.5 mb-8 w-full max-w-xl">
+            <div class="flex items-center justify-center gap-3 text-center bg-white/70 backdrop-blur-xs p-2.5 rounded-xl border border-slate-100 shadow-2xs">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-3.5 h-3.5"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                זמני תגובה וביצוע מהירים במיוחד למניעת עיכובים בפרויקט
+              </span>
+            </div>
+
+            <div class="flex items-center justify-center gap-3 text-center bg-white/70 backdrop-blur-xs p-2.5 rounded-xl border border-slate-100 shadow-2xs">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-3.5 h-3.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
+              </div>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                ליווי בירוקרטי מלא מול המשרד להגנת הסביבה
+              </span>
+            </div>
+
+            <div class="flex items-center justify-center gap-3 text-center bg-white/70 backdrop-blur-xs p-2.5 rounded-xl border border-slate-100 shadow-2xs">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-3.5 h-3.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </div>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                ביצוע על ידי מומחה בתחום הרגולציה של המשרד להגנת הסביבה
+              </span>
+            </div>
+          </div>
+
+          <!-- Dual CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+            <a href="#quick-form" class="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 group">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5 text-emerald-400 group-hover:scale-110 transition-transform"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+              <span>קבלו הצעת מחיר תוך 24 שעות</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            </a>
+
+            <a href="https://wa.me/972508912345?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A6%D7%A8%D7%99%D7%9A%20%D7%A1%D7%A7%D7%A8%20%D7%A7%D7%A8%D7%A7%D7%A2%20%D7%9C%D7%94%D7%99%D7%AA%D7%A8%20%D7%91%D7%A0%D7%99%D7%99%D7%94%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%99%D7%99%D7%A2%D7%95%D7%A5" 
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+              <span>דברו איתנו בוואטסאפ</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Left Column (Visual + Lead Form Combo) - 5 cols on desktop -->
+        <div class="lg:col-span-5 relative" id="quick-form">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Real Engineer Photo Background Card -->
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 270" preserveAspectRatio="xMidYMid slice" role="img" aria-label="איור של נוף עירוני עם בניינים ועגורן בנייה" class="w-full h-48 sm:h-56 block transform group-hover:scale-105 transition-all duration-700"><defs><linearGradient id="citySky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfdbfe"/><stop offset=".6" stop-color="#e0f2fe"/><stop offset="1" stop-color="#ecfdf5"/></linearGradient></defs><rect width="600" height="270" fill="url(#citySky)"/><circle cx="470" cy="66" r="46" fill="#fde68a" opacity=".35"/><circle cx="470" cy="66" r="26" fill="#fde68a"/><rect x="0" y="111" width="46" height="95" fill="#cbd5e1" opacity=".75"/><rect x="40" y="86" width="38" height="120" fill="#cbd5e1" opacity=".75"/><rect x="82" y="118" width="52" height="88" fill="#cbd5e1" opacity=".75"/><rect x="130" y="76" width="40" height="130" fill="#cbd5e1" opacity=".75"/><rect x="176" y="106" width="48" height="100" fill="#cbd5e1" opacity=".75"/><rect x="228" y="88" width="36" height="118" fill="#cbd5e1" opacity=".75"/><rect x="268" y="114" width="50" height="92" fill="#cbd5e1" opacity=".75"/><rect x="314" y="82" width="42" height="124" fill="#cbd5e1" opacity=".75"/><rect x="360" y="108" width="50" height="98" fill="#cbd5e1" opacity=".75"/><rect x="414" y="94" width="38" height="112" fill="#cbd5e1" opacity=".75"/><rect x="456" y="116" width="52" height="90" fill="#cbd5e1" opacity=".75"/><rect x="512" y="86" width="40" height="120" fill="#cbd5e1" opacity=".75"/><rect x="556" y="106" width="48" height="100" fill="#cbd5e1" opacity=".75"/><rect x="10" y="86" width="50" height="120" fill="#94a3b8"/><rect x="17" y="96" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="28" y="96" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="39" y="96" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="50" y="96" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="17" y="112" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="28" y="112" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="39" y="112" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="50" y="112" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="17" y="128" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="28" y="128" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="39" y="128" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="50" y="128" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="17" y="144" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="28" y="144" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="39" y="144" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="50" y="144" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="17" y="160" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="28" y="160" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="39" y="160" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="50" y="160" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="17" y="176" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="28" y="176" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="39" y="176" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="50" y="176" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="17" y="192" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="28" y="192" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="39" y="192" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="50" y="192" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="70" y="56" width="44" height="150" fill="#94a3b8"/><rect x="77" y="66" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="88" y="66" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="99" y="66" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="77" y="82" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="88" y="82" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="99" y="82" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="77" y="98" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="88" y="98" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="99" y="98" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="77" y="114" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="88" y="114" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="99" y="114" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="77" y="130" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="88" y="130" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="99" y="130" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="77" y="146" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="88" y="146" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="99" y="146" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="77" y="162" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="88" y="162" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="99" y="162" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="77" y="178" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="88" y="178" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="99" y="178" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="77" y="194" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="88" y="194" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="99" y="194" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="124" y="96" width="60" height="110" fill="#94a3b8"/><rect x="131" y="106" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="142" y="106" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="153" y="106" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="164" y="106" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="175" y="106" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="131" y="122" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="142" y="122" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="153" y="122" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="164" y="122" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="175" y="122" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="131" y="138" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="142" y="138" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="153" y="138" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="164" y="138" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="175" y="138" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="131" y="154" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="142" y="154" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="153" y="154" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="164" y="154" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="175" y="154" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="131" y="170" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="142" y="170" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="153" y="170" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="164" y="170" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="175" y="170" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="131" y="186" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="142" y="186" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="153" y="186" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="164" y="186" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="175" y="186" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="190" y="41" width="46" height="165" fill="#94a3b8"/><rect x="197" y="51" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="208" y="51" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="219" y="51" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="197" y="67" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="208" y="67" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="219" y="67" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="197" y="83" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="208" y="83" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="219" y="83" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="197" y="99" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="208" y="99" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="219" y="99" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="197" y="115" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="208" y="115" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="219" y="115" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="197" y="131" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="208" y="131" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="219" y="131" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="197" y="147" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="208" y="147" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="219" y="147" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="197" y="163" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="208" y="163" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="219" y="163" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="197" y="179" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="208" y="179" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="219" y="179" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="197" y="195" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="208" y="195" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="219" y="195" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="242" y="78" width="56" height="128" fill="#94a3b8"/><rect x="249" y="88" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="260" y="88" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="271" y="88" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="282" y="88" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="249" y="104" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="260" y="104" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="271" y="104" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="282" y="104" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="249" y="120" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="260" y="120" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="271" y="120" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="282" y="120" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="249" y="136" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="260" y="136" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="271" y="136" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="282" y="136" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="249" y="152" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="260" y="152" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="271" y="152" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="282" y="152" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="249" y="168" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="260" y="168" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="271" y="168" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="282" y="168" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="249" y="184" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="260" y="184" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="271" y="184" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="282" y="184" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="304" y="56" width="48" height="150" fill="#94a3b8"/><rect x="311" y="66" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="322" y="66" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="333" y="66" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="311" y="82" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="322" y="82" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="333" y="82" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="311" y="98" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="322" y="98" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="333" y="98" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="311" y="114" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="322" y="114" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="333" y="114" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="311" y="130" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="322" y="130" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="333" y="130" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="311" y="146" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="322" y="146" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="333" y="146" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="311" y="162" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="322" y="162" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="333" y="162" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="311" y="178" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="322" y="178" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="333" y="178" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="311" y="194" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="322" y="194" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="333" y="194" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="358" y="88" width="58" height="118" fill="#94a3b8"/><rect x="365" y="98" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="376" y="98" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="387" y="98" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="398" y="98" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="365" y="114" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="376" y="114" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="387" y="114" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="398" y="114" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="365" y="130" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="376" y="130" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="387" y="130" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="398" y="130" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="365" y="146" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="376" y="146" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="387" y="146" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="398" y="146" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="365" y="162" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="376" y="162" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="387" y="162" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="398" y="162" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="365" y="178" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="376" y="178" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="387" y="178" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="398" y="178" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="365" y="194" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="376" y="194" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="387" y="194" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="398" y="194" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="424" y="64" width="44" height="142" fill="#94a3b8"/><rect x="431" y="74" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="442" y="74" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="453" y="74" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="431" y="90" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="442" y="90" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="453" y="90" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="431" y="106" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="442" y="106" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="453" y="106" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="431" y="122" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="442" y="122" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="453" y="122" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="431" y="138" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="442" y="138" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="453" y="138" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="431" y="154" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="442" y="154" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="453" y="154" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="431" y="170" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="442" y="170" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="453" y="170" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="431" y="186" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="442" y="186" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="453" y="186" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="474" y="94" width="52" height="112" fill="#94a3b8"/><rect x="481" y="104" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="492" y="104" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="503" y="104" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="514" y="104" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="481" y="120" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="492" y="120" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="503" y="120" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="514" y="120" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="481" y="136" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="492" y="136" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="503" y="136" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="514" y="136" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="481" y="152" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="492" y="152" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="503" y="152" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="514" y="152" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="481" y="168" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="492" y="168" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="503" y="168" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="514" y="168" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="481" y="184" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="492" y="184" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="503" y="184" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="514" y="184" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="534" y="68" width="50" height="138" fill="#94a3b8"/><rect x="541" y="78" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="552" y="78" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="563" y="78" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="574" y="78" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="541" y="94" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="552" y="94" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="563" y="94" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="574" y="94" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="541" y="110" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="552" y="110" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="563" y="110" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="574" y="110" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="541" y="126" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="552" y="126" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="563" y="126" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="574" y="126" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="541" y="142" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="552" y="142" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="563" y="142" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="574" y="142" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="541" y="158" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="552" y="158" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="563" y="158" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="574" y="158" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="541" y="174" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="552" y="174" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="563" y="174" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="574" y="174" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="541" y="190" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="552" y="190" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="563" y="190" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="574" y="190" width="5" height="7" rx="1" fill="#e2e8f0" opacity=".55"/><rect x="0" y="68" width="64" height="138" fill="#1e293b"/><rect x="8" y="80" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="20" y="80" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="32" y="80" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="44" y="80" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="8" y="95" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="20" y="95" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="32" y="95" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="44" y="95" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="8" y="110" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="20" y="110" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="32" y="110" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="44" y="110" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="8" y="125" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="20" y="125" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="32" y="125" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="44" y="125" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="8" y="140" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="20" y="140" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="32" y="140" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="44" y="140" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="8" y="155" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="20" y="155" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="32" y="155" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="44" y="155" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="8" y="170" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="20" y="170" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="32" y="170" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="44" y="170" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="8" y="185" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="20" y="185" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="32" y="185" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="44" y="185" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="70" y="34" width="52" height="172" fill="#0f172a"/><rect x="78" y="46" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="90" y="46" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="102" y="46" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="78" y="61" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="90" y="61" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="102" y="61" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="78" y="76" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="90" y="76" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="102" y="76" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="78" y="91" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="90" y="91" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="102" y="91" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="78" y="106" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="90" y="106" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="102" y="106" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="78" y="121" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="90" y="121" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="102" y="121" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="78" y="136" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="90" y="136" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="102" y="136" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="78" y="151" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="90" y="151" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="102" y="151" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="78" y="166" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="90" y="166" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="102" y="166" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="78" y="181" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="90" y="181" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="102" y="181" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="128" y="88" width="70" height="118" fill="#334155"/><rect x="136" y="100" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="148" y="100" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="160" y="100" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="172" y="100" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="184" y="100" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="136" y="115" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="148" y="115" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="160" y="115" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="172" y="115" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="184" y="115" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="136" y="130" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="148" y="130" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="160" y="130" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="172" y="130" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="184" y="130" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="136" y="145" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="148" y="145" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="160" y="145" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="172" y="145" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="184" y="145" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="136" y="160" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="148" y="160" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="160" y="160" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="172" y="160" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="184" y="160" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="136" y="175" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="148" y="175" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="160" y="175" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="172" y="175" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="184" y="175" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="136" y="190" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="148" y="190" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="160" y="190" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="172" y="190" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="184" y="190" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="206" y="56" width="56" height="150" fill="#1e293b"/><rect x="214" y="68" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="226" y="68" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="238" y="68" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="250" y="68" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="214" y="83" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="226" y="83" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="238" y="83" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="250" y="83" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="214" y="98" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="226" y="98" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="238" y="98" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="250" y="98" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="214" y="113" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="226" y="113" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="238" y="113" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="250" y="113" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="214" y="128" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="226" y="128" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="238" y="128" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="250" y="128" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="214" y="143" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="226" y="143" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="238" y="143" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="250" y="143" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="214" y="158" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="226" y="158" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="238" y="158" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="250" y="158" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="214" y="173" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="226" y="173" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="238" y="173" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="250" y="173" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="214" y="188" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="226" y="188" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="238" y="188" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="250" y="188" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="268" y="16" width="66" height="190" fill="#0f172a"/><rect x="276" y="28" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="288" y="28" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="300" y="28" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="312" y="28" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="324" y="28" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="276" y="43" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="288" y="43" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="300" y="43" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="312" y="43" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="324" y="43" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="276" y="58" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="288" y="58" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="300" y="58" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="312" y="58" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="324" y="58" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="276" y="73" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="288" y="73" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="300" y="73" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="312" y="73" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="324" y="73" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="276" y="88" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="288" y="88" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="300" y="88" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="312" y="88" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="324" y="88" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="276" y="103" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="288" y="103" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="300" y="103" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="312" y="103" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="324" y="103" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="276" y="118" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="288" y="118" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="300" y="118" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="312" y="118" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="324" y="118" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="276" y="133" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="288" y="133" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="300" y="133" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="312" y="133" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="324" y="133" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="276" y="148" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="288" y="148" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="300" y="148" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="312" y="148" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="324" y="148" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="276" y="163" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="288" y="163" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="300" y="163" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="312" y="163" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="324" y="163" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="276" y="178" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="288" y="178" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="300" y="178" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="312" y="178" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="324" y="178" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="276" y="193" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="288" y="193" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="300" y="193" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="312" y="193" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="324" y="193" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="342" y="80" width="54" height="126" fill="#334155"/><rect x="350" y="92" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="362" y="92" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="374" y="92" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="386" y="92" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="350" y="107" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="362" y="107" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="374" y="107" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="386" y="107" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="350" y="122" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="362" y="122" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="374" y="122" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="386" y="122" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="350" y="137" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="362" y="137" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="374" y="137" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="386" y="137" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="350" y="152" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="362" y="152" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="374" y="152" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="386" y="152" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="350" y="167" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="362" y="167" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="374" y="167" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="386" y="167" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="350" y="182" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="362" y="182" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="374" y="182" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="386" y="182" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="402" y="46" width="62" height="160" fill="#1e293b"/><rect x="410" y="58" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="422" y="58" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="434" y="58" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="446" y="58" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="410" y="73" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="422" y="73" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="434" y="73" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="446" y="73" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="410" y="88" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="422" y="88" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="434" y="88" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="446" y="88" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="410" y="103" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="422" y="103" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="434" y="103" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="446" y="103" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="410" y="118" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="422" y="118" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="434" y="118" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="446" y="118" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="410" y="133" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="422" y="133" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="434" y="133" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="446" y="133" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="410" y="148" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="422" y="148" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="434" y="148" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="446" y="148" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="410" y="163" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="422" y="163" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="434" y="163" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="446" y="163" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="410" y="178" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="422" y="178" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="434" y="178" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="446" y="178" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="410" y="193" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="422" y="193" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="434" y="193" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="446" y="193" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="472" y="98" width="44" height="108" fill="#0f172a"/><rect x="480" y="110" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="492" y="110" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="504" y="110" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="480" y="125" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="492" y="125" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="504" y="125" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="480" y="140" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="492" y="140" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="504" y="140" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="480" y="155" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="492" y="155" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="504" y="155" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="480" y="170" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="492" y="170" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="504" y="170" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="480" y="185" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="492" y="185" width="6" height="8" rx="1" fill="#64748b" opacity=".35"/><rect x="504" y="185" width="6" height="8" rx="1" fill="#fde68a" opacity=".95"/><rect x="268" y="8" width="66" height="8" fill="#059669"/><g stroke="#059669" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M548 206V40"/><path d="M560 206V40"/><path d="M548 206l12-24M560 206l-12-24M548 182l12-24M560 182l-12-24M548 158l12-24M560 158l-12-24M548 134l12-24M560 134l-12-24M548 110l12-24M560 110l-12-24M548 86l12-24M560 86l-12-24M548 62l12-22M560 62l-12-22"/><path d="M470 40h124"/><path d="M470 40l84-18 36 18"/><path d="M554 22V40"/><path d="M592 40v14h-14"/><path d="M490 40v40"/><path d="M482 80h16v10h-16z" fill="#059669"/></g><rect x="0" y="206" width="600" height="8" fill="#475569"/><path d="M0,214 H600 V270 H0Z" fill="#e6d8b0"/><path d="M0,232 C90,224 170,242 270,232 S470,224 600,236 V270 H0Z" fill="#d2a877"/><path d="M0,252 C100,244 190,260 300,252 S480,244 600,254 V270 H0Z" fill="#b7c873"/><ellipse cx="330" cy="246" rx="58" ry="12" fill="#e08a2c" opacity=".55"/><g fill="#0f172a"><rect x="150" y="214" width="5" height="52" rx="2"/><rect x="400" y="214" width="5" height="52" rx="2"/></g><g fill="#34d399" stroke="#0f172a" stroke-width="1.5"><circle cx="152.5" cy="232" r="3.5"/><circle cx="152.5" cy="252" r="3.5"/><circle cx="402.5" cy="238" r="3.5"/><circle cx="402.5" cy="256" r="3.5"/></g></svg>
+            </div>
+
+            <!-- Instant Lead Capture Card -->
+            <div class="mt-4 relative z-10 bg-white rounded-2xl p-6 sm:p-7 shadow-xl border border-slate-200/90 backdrop-blur-sm">
+              <div class="flex items-center justify-center mb-4 pb-3 border-b border-slate-100 text-center">
+                <h2 class="text-lg sm:text-xl font-black text-slate-900">בדיקת היתכנות והצעת מחיר</h2>
+              </div>
+
+              <!-- Fast Lead Form -->
+              <form id="heroLeadForm" class="space-y-3.5">
+                <div>
+                  <label for="heroName" class="block text-xs font-bold text-slate-700 mb-1">שם מלא *</label>
+                  <div class="relative">
+                    <input type="text" id="heroName" name="name" required placeholder="לדוגמה: ישראל ישראלי" 
+                           class="w-full px-3.5 py-2.5 pr-9 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-slate-400 absolute top-3 right-3 pointer-events-none"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="heroPhone" class="block text-xs font-bold text-slate-700 mb-1">טלפון נייד לחזרה *</label>
+                  <div class="relative">
+                    <input type="tel" id="heroPhone" name="phone" required dir="ltr" placeholder="050-1234567" 
+                           class="w-full px-3.5 py-2.5 pl-3 pr-9 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition text-right">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-slate-400 absolute top-3 right-3 pointer-events-none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label for="heroType" class="block text-xs font-bold text-slate-700 mb-1">סוג הפרויקט</label>
+                    <select id="heroType" name="project_type" class="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-slate-800 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition bg-white">
+                      <option value="התחדשות עירונית (פינוי בינוי / תמא)">פינוי בינוי / תמ"א 38</option>
+                      <option value="בנייה רוויה למגורים">מגורים בבנייה רוויה</option>
+                      <option value="בנייה פרטית / וילות">בנייה פרטית / צמוד קרקע</option>
+                      <option value="אחר">פרויקט אחר</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="heroCity" class="block text-xs font-bold text-slate-700 mb-1">עיר / מועצה</label>
+                    <input type="text" id="heroCity" name="city" placeholder="לדוגמה: תל אביב, חיפה" 
+                           class="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="heroSubmitBtn" 
+                        class="w-full mt-2 inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm sm:text-base shadow-lg hover:shadow-glow-emerald transition-all transform hover:-translate-y-0.5">
+                  <span id="heroBtnText">שלחו פרטים ונחזור אליכם בהקדם</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" id="heroBtnIcon" class="w-4 h-4"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                </button>
+
+                <!-- Privacy & Guarantee -->
+                <div class="flex items-center justify-center gap-2 text-[11px] text-slate-500 text-center pt-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-3.5 h-3.5 text-emerald-600"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>100% שמירה על פרטיות. ללא ספאם. ייעוץ מקצועי בלבד</span>
+                </div>
+              </form>
+
+              <!-- Success Alert (Hidden by default) -->
+              <div id="heroSuccessAlert" class="hidden mt-3 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs sm:text-sm">
+                <div class="flex items-center gap-2 font-bold mb-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-emerald-600"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                  <span>פנייתך התקבלה בהצלחה!</span>
+                </div>
+                <p>יועץ סביבתי של דרכי נועם יצור עמך קשר תוך שעתיים בשעות הפעילות.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. TRUST & AUTHORITY BAR (STATS / USP STRIP) ================= -->
+  <section class="bg-slate-900 text-white py-8 border-y border-slate-800 relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
+        
+        <!-- Stat 1 -->
+        <div class="flex items-center justify-center gap-4 group text-center">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-6 h-6"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center justify-center gap-1">
+              <span>זמני שיא</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-400 mt-0.5">הגשת דו"חות וביצוע קידוחים בלו"ז מואץ</p>
+          </div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="flex items-center justify-center gap-4 group text-center">
+          <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-6 h-6"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center justify-center gap-1">
+              <span>תקן ISO</span>
+              <span class="text-xs text-blue-400 font-bold px-1.5 py-0.5 bg-blue-900/50 rounded">17025</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-400 mt-0.5">עבודה עם מעבדות מוסמכות בלבד</p>
+          </div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="flex items-center justify-center gap-4 group text-center">
+          <div class="w-12 h-12 rounded-2xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 group-hover:scale-110 transition-transform shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-6 h-6"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center justify-center gap-1">
+              <span>מקצה לקצה</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-400 mt-0.5">מסקר היסטורי ועד קבלת אישור NFA להגשה לוועדה</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY SOIL SURVEY MATTERS (CRO PAIN POINT SECTION) ================= -->
+  <section class="py-16 bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-slate-50 via-slate-100/60 to-emerald-50/40 rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-8 text-center">
+            <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100/80 px-3 py-1 rounded-full mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-3.5 h-3.5"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+              צוואר בקבוק נפוץ בהיתרי בנייה
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-4">
+              תנאי להיתר בנייה הוא ביצוע חקירת קרקע וקבלת אישור המשרד להגנת הסביבה?
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+              באזורים בעלי חשש לזיהום קרקע או גז קרקע, עמידה בדרישות הסביבה מותנית בביצוע חקירת קרקע וקבלת אישור NFA (No Further Action) רשמי מהמשרד להגנת הסביבה כתנאי להיתר בנייה.
+            </p>
+          </div>
+
+          <div class="lg:col-span-4 bg-white rounded-2xl p-6 border border-slate-200 shadow-md text-center">
+            <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-6 h-6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="m19 1 4 4-4 4"/><path d="M15 5h8"/></svg>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-lg mb-1">לא בטוחים מה דורשים מכם?</h3>
+            <p class="text-xs text-slate-500 mb-4">שלחו לנו את מסמך תנאי ההיתר של הוועדה, ונחזיר חוות דעת ראשונית בהקדם</p>
+            <a href="https://wa.me/972508912345?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A9%D7%9C%D7%95%D7%97%20%D7%9E%D7%A1%D7%9E%D7%9A%20%D7%93%D7%A8%D7%99%D7%A9%D7%95%D7%AA%20%D7%9E%D7%94%D7%95%D7%95%D7%A2%D7%93%D7%94%20%D7%9C%D7%91%D7%93%D7%99%D7%A7%D7%94%20%D7%9E%D7%94%D7%99%D7%A8%D7%94" 
+               target="_blank" rel="noopener noreferrer"
+               class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow transition">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg>
+              <span>שליחת מסמכים בוואטסאפ לבדיקה</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. CORE SERVICES GRID ================= -->
+  <section id="services" class="py-20 bg-slate-50 relative scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-3.5 h-3.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          מעטפת מקצועית מוסמכת
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mb-4">
+          השירותים שלנו בדרך להיתר
+        </h2>
+        <p class="text-base text-slate-600">
+          השירות מבוצע בהתאם להנחיות המקצועיות של אגף שפכי תעשייה, דלקים וקרקעות מזוהמות במשרד להגנת הסביבה
+        </p>
+      </div>
+
+      <!-- Services Grid: 4 Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Card 1: סקר היסטורי Phase 1 -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-card-hover hover:-translate-y-1 transition duration-300 relative group flex flex-col justify-between text-center">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200/80 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition duration-300 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-7 h-7"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+              </div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
+                Phase 1 • סקר שלב א׳
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-black text-slate-900 mb-3 group-hover:text-emerald-700 transition-colors">
+              סקר היסטורי (Phase 1)
+            </h3>
+
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              איתור מוקדי זיהום פוטנציאליים וניתוח היסטוריית המגרש לשחרור מהיר מחשד לזיהום. הסקר כולל בדיקת תצלומי אוויר היסטוריים (תצ"א), סקירת ארכיון תיק בניין, ניתוח נתונים הידרוגיאולוגיים, סקירת שימושים מסביב למגרש והצעה לתכנית דיגום (קרקע\גז קרקע) ככל וידרש.
+            </p>
+
+            <ul class="space-y-2.5 mb-6 text-xs sm:text-sm text-slate-700">
+              <li class="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-emerald-600 shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                <span>ניתוח תצלומי אוויר לאורך עשרות שנים</span>
+              </li>
+              <li class="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-emerald-600 shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                <span>הערכת סיכונים סביבתיים מקיפה</span>
+              </li>
+              <li class="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-emerald-600 shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                <span>הגשת דו"ח Phase 1 לאישור המשרד להגנ"ס</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-center gap-4 flex-wrap">
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded">לו"ז ממוצע: 7-14 ימי עסקים</span>
+            <a href="#quick-form" class="text-xs font-bold text-slate-900 hover:text-emerald-600 flex items-center gap-1 group-hover:translate-x-1 transition">
+              <span>הזמנת סקר היסטורי</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4"><path d="m15 18-6-6 6-6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: דיגום קרקע וגז קרקע Phase 2 -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-card-hover hover:-translate-y-1 transition duration-300 relative group flex flex-col justify-between text-center">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200/80 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition duration-300 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-7 h-7"><path d="M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5V2"/><path d="M8.5 2h7"/><path d="M14.5 16h-5"/></svg>
+              </div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
+                Phase 2 • סקר שלב ב׳
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-black text-slate-900 mb-3 group-hover:text-amber-700 transition-colors">
+              דיגום קרקע וגז קרקע (Phase 2)
+            </h3>
+
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              תכנון מוקפד וביצוע קידוחים ודיגומים בשטח על ידי דוגמים מוסמכים ומעבדות אנליטיות מוסמכות ISO 17025. הדיגום יבוצע בהתאם לתכנית שאושרה ע״י המשרד. בסיום שלב זה מוגש למשרד להגנ״ס דו״ח ממצאים.
+            </p>
+
+            <ul class="space-y-2.5 mb-6 text-xs sm:text-sm text-slate-700">
+              <li class="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-emerald-600 shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                <span>ביצוע דיגום עפ״י תכנית מאושרת</span>
+              </li>
+              <li class="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-emerald-600 shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                <span>קידוחי קרקע וגז קרקע עם ציוד ייעודי להפרה מינימלית של השטח</span>
+              </li>
+              <li class="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-emerald-600 shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                <span>אנליזות במעבדות מוסמכות</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-center gap-4 flex-wrap">
+            <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">דיגום מוסמך בתקן בינלאומי</span>
+            <a href="#quick-form" class="text-xs font-bold text-slate-900 hover:text-amber-600 flex items-center gap-1 group-hover:translate-x-1 transition">
+              <span>הזמנת דיגום שטח</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4"><path d="m15 18-6-6 6-6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: התייחסות המשרד להגנ״ס -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-card-hover hover:-translate-y-1 transition duration-300 relative group flex flex-col justify-between text-center">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200/80 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition duration-300 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-7 h-7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="14" r="3"/><path d="m10.5 16.5-.9 4 2.4-1.2 2.4 1.2-.9-4"/></svg>
+              </div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
+                סגירה רגולטורית
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-black text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">
+              התייחסות המשרד להגנ״ס
+            </h3>
+
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              ככל ולא נמצאו חריגות ביחס לדיגומים שבוצעו והמגרש נמצא נקי מזיהום ינפיק המשרד את אישור ה-NFA. יחד עם זאת, במידה ונמצא זיהום בגז קרקע ינפיק המשרד אישור המתנה את היתר הבנייה בכך שיבוצע מיגון לקומות התת״ק מפני חדירת גזי קרקע ו\או המשך חקירה ושיקום הקרקע ככל וימצא זיהום בקרקע.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-center gap-4 flex-wrap">
+            <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded">חיסכון של שבועות בבירוקרטיה</span>
+            <a href="#quick-form" class="text-xs font-bold text-slate-900 hover:text-blue-600 flex items-center gap-1 group-hover:translate-x-1 transition">
+              <span>ייעוץ מול הרגולטור</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4"><path d="m15 18-6-6 6-6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4: סיום הליך חקירה וקבלת אישור NFA -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-card-hover hover:-translate-y-1 transition duration-300 relative group flex flex-col justify-between text-center">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-teal-50 border border-teal-200/80 text-teal-600 flex items-center justify-center group-hover:bg-teal-600 group-hover:text-white transition duration-300 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-7 h-7"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+              </div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
+                סיום הליך חקירה
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-black text-slate-900 mb-3 group-hover:text-teal-700 transition-colors">
+              סיום הליך חקירה וקבלת אישור NFA
+            </h3>
+
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              פתרונות הנדסיים וכלכליים חכמים במקרה של גילוי זיהום בשטח. אנו מתכננים תוכנית חפירה ופינוי (Remediation Plan), מנהלים את תעודות המשלוח (מניפסטים) לאתרי קצה מורשים בישראל, ומנפיקים אישור NFA (No Further Action) לקרקע נקייה.
+            </p>
+
+            <ul class="space-y-2.5 mb-6 text-xs sm:text-sm text-slate-700">
+              <li class="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-emerald-600 shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                <span>הנפקת אישור NFA רשמי מהמשרד להגנת הסביבה</span>
+              </li>
+              <li class="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-emerald-600 shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+                <span>הגשת אישור המשרד להגנ״ס לועדה המקומית</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-center gap-4 flex-wrap">
+            <span class="text-xs font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded">אישור NFA לשחרור המגרש</span>
+            <a href="#quick-form" class="text-xs font-bold text-slate-900 hover:text-teal-600 flex items-center gap-1 group-hover:translate-x-1 transition">
+              <span>ייעוץ שיקום קרקע</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4"><path d="m15 18-6-6 6-6"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 5. THE FAST-TRACK PROCESS ================= -->
+  <section id="process" class="py-20 bg-white relative scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-bold mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-3.5 h-3.5 text-emerald-600"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+          שקיפות ומהירות ללא פשרות
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mb-4">
+          איך אנחנו חוסכים לכם זמן יקר?
+        </h2>
+        <p class="text-base text-slate-600">
+          תהליך מובנה ב-4 שלבים שנועד לקצר את דרככם להיתר הבנייה תוך עמידה מלאה בדרישות החוק
+        </p>
+      </div>
+
+      <!-- Process Steps (Desktop Horizontal, Mobile Vertical) -->
+      <div class="relative">
+        
+        <!-- Connecting Line for Desktop -->
+        <div class="hidden lg:block absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-slate-200 -translate-y-6 z-0"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+          
+          <!-- Step 1 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition text-center relative group">
+            <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-black text-lg mb-5 mx-auto shadow-md group-hover:bg-emerald-600 transition">
+              01
+            </div>
+            <div class="inline-block px-2.5 py-0.5 rounded text-[11px] font-bold bg-emerald-50 text-emerald-700 mb-2 border border-emerald-200">
+              תוך 24 שעות
+            </div>
+            <h3 class="text-lg font-black text-slate-900 mb-2">שיחת אפיון ובדיקת דרישות</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              אנחנו עוברים על תיק הבניין, דרישות הוועדה המקומית והמשרד להגנת הסביבה, ומגדירים בדיוק מה נדרש – בלי בדיקות מיותרות שמייקרות את הפרויקט.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition text-center relative group">
+            <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-black text-lg mb-5 mx-auto shadow-md group-hover:bg-emerald-600 transition">
+              02
+            </div>
+            <div class="inline-block px-2.5 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 mb-2 border border-blue-200">
+              עבודה ארכיונית ושטח
+            </div>
+            <h3 class="text-lg font-black text-slate-900 mb-2">איסוף מידע וסקר היסטורי</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              סקירת תצ"א היסטוריים, סיור שטח של יועץ סביבה, בדיקת מסמכים היסטוריים בתיק בניין ומיפוי פוטנציאל זיהום הקרקע לשלילת חשד לזיהום או הגדרת נקודות דיגום מדויקות.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition text-center relative group">
+            <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-black text-lg mb-5 mx-auto shadow-md group-hover:bg-emerald-600 transition">
+              03
+            </div>
+            <div class="inline-block px-2.5 py-0.5 rounded text-[11px] font-bold bg-amber-50 text-amber-700 mb-2 border border-amber-200">
+              מעבדה מוסמכת
+            </div>
+            <h3 class="text-lg font-black text-slate-900 mb-2">דיגומים ואנליזות שטח</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              במידה ונדרש: ביצוע קידוחים מדויקים על ידי דוגמים מוסמכים, לקיחת דוגמאות קרקע/גז, ושליחה לאנליזה מואצת במעבדות מוסמכות.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition text-center relative group">
+            <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-black text-lg mb-5 mx-auto shadow-md group-hover:bg-emerald-600 transition">
+              04
+            </div>
+            <div class="inline-block px-2.5 py-0.5 rounded text-[11px] font-bold bg-emerald-100 text-emerald-800 mb-2 border border-emerald-300">
+              עמידה בתנאי היתר
+            </div>
+            <h3 class="text-lg font-black text-slate-900 mb-2">דו"ח סופי ואישור להיתר</h3>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              עריכת דו"ח מקצועי ברמה הגבוהה ביותר, הגשתו לרכז קרקעות מזוהמות המחוזי וליווי הדוק עד לקבלת אישור NFA הנדרש כתנאי למתן היתר הבנייה.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 7. WHY CHOOSE US ================= -->
+  <section id="why-us" class="py-20 bg-slate-50 relative scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-3.5 h-3.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          היתרון התחרותי שלנו
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+          למה אנחנו?
+        </h2>
+      </div>
+
+      <!-- 3 Key Pillars -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition text-center">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-6 h-6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg>
+          </div>
+          <h3 class="text-xl font-black text-slate-900 mb-3">יחס אישי ומהיר ללקוח</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            עבודה ישירה מול איש המקצוע שמכיר את המגרש ומנהל עבורכם את ההליך מול המשרד להגנת הסביבה.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition text-center">
+          <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-6 h-6"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><path d="m12 2 8 5H4Z"/></svg>
+          </div>
+          <h3 class="text-xl font-black text-slate-900 mb-3">שליטה ברגולציה הישראלית</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            היכרות מעמיקה עם רגולציית הגנ״ס בנושא קרקעות מזוהמות - אנחנו יודעים מה נדרש ויודעים לספק מענה מדויק.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition text-center">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-6 h-6"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+          </div>
+          <h3 class="text-xl font-black text-slate-900 mb-3">שקיפות מחירים מלאה – ללא הפתעות</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            הצעת מחיר ברורה וסופית מהיום הראשון. אנחנו לא ממציאים קידוחים מיותרים, אלא פועלים לצמצום עלויות הדיגום והפינוי של הלקוח עד למינימום ההכרחי על פי חוק.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 8. CLIENT PROFILES (WHO WE HELP) ================= -->
+  <section class="py-16 bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="text-2xl sm:text-3xl font-black text-slate-900">
+          מותאם במדויק לצרכים של אנשי המקצוע בענף
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        
+        <!-- Profile 1 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-300 transition shadow-2xs group text-center">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+          </div>
+          <h4 class="font-extrabold text-slate-900 text-lg mb-2">יזמי התחדשות עירונית</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            סגירת תנאים סביבתיים להיתרי הריסה ובנייה בלוחות זמנים צפופים.
+          </p>
+        </div>
+
+        <!-- Profile 2 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-300 transition shadow-2xs group text-center">
+          <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+          </div>
+          <h4 class="font-extrabold text-slate-900 text-lg mb-2">בונים פרטיים</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            ליווי אישי מובן וברור למגרשים פרטיים הנדרשים בחקירת קרקע עקב קרבה או מיקום באזור בעל פוטנציאל זיהום קרקע.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 9. FREQUENTLY ASKED QUESTIONS (FAQ) ================= -->
+  <section id="faq" class="py-20 bg-slate-50 relative scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-14">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-200/80 text-slate-800 text-xs font-bold mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-3.5 h-3.5 text-emerald-600"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+          כל מה שחשוב לדעת
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mb-3">
+          שאלות נפוצות על סקרי קרקע והיתרים
+        </h2>
+        <p class="text-slate-600 text-sm">
+          תשובות מקצועיות לשאלות הנפוצות ביותר שאנו נשאלים על ידי יזמים ומנהלי תכנון
+        </p>
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div class="space-y-4">
+        
+        <!-- FAQ 1 -->
+        <details class="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs transition-all duration-200" open>
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-emerald-700 select-none">
+            <span class="text-base sm:text-lg flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs font-black shrink-0">1</span>
+              מתי נדרש לבצע סקר קרקע לפי החוק?
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-200"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-6 pb-6 pt-1 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+            סקר קרקע נדרש כאשר מגרש מיועד לשינוי ייעוד, הריסה ובנייה חדשה, או תוספת בנייה משמעותית, ונמצא באחד מהמקרים הבאים: היסטוריה של פעילות תעשייתית או סמיכות למקורות זיהום פוטנציאליים. הוועדה המקומית או המשרד להגנת הסביבה קובעים דרישה זו כתנאי סף לקבלת היתר בנייה, חפירה או דיפון.
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs transition-all duration-200">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-emerald-700 select-none">
+            <span class="text-base sm:text-lg flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs font-black shrink-0">2</span>
+              כמה זמן לוקח התהליך משלב הפנייה ועד קבלת האישור?
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-200"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-6 pb-6 pt-1 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+            סקר היסטורי (שלב 1) אורך בדרך כלל בין 7 ל-14 ימי עסקים מרגע קבלת כל החומרים. במידה והסקר ההיסטורי משחרר את האתר מחשד לזיהום – ניתן לקבל אישור רגולטורי מהיר. במידה ונדרש שלב דיגומים (שלב 2), התהליך כולל תוכנית דיגום, קידוחי שטח ובדיקות מעבדה, ואורך כ-3 עד 6 שבועות. אנו עושים מאמץ מירבי לקצר את הזמנים למינימום האפשרי.
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs transition-all duration-200">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-emerald-700 select-none">
+            <span class="text-base sm:text-lg flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs font-black shrink-0">3</span>
+              מה ההבדל בין סקר היסטורי (שלב 1) לדיגום קרקע (שלב 2)?
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-200"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-6 pb-6 pt-1 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+            <strong>סקר היסטורי (Phase 1):</strong> איסוף נתונים ארכיוניים, תצלומי אוויר, היתרי בנייה ותיעוד שימושי עבר ללא פעולות פיזיות בקרקע. מטרתו לברר האם קיים חשד ממשי לזיהום.<br>
+            <strong>דיגום קרקע וגז (Phase 2):</strong> מתבצע רק כאשר הסקר ההיסטורי העלה חשד לזיהום. הוא כולל קידוחים פיזיים, נטילת דגימות קרקע וגז קרקע וביצוע אנליזות כימיות במעבדה מוסמכת.
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs transition-all duration-200">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-emerald-700 select-none">
+            <span class="text-base sm:text-lg flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs font-black shrink-0">4</span>
+              האם אפשר לקבל היתר חפירה ודיפון לפני השלמת סקר הקרקע?
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-200"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-6 pb-6 pt-1 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+            ברוב המקרים לא. הוועדות המקומיות והמשרד להגנת הסביבה דורשים אישור סביבתי מקדמי לפני שמאפשרים חפירה באתר, מחשש שחפירה בלתי מבוקרת תפיץ זיהום או תפגע בעובדים ובתושבי הסביבה. עם זאת, בליווי מקצועי נכון, ניתן להגיש בקשה למתווה מואץ של פיקוח במהלך החפירה ולחסוך עיכובים.
+          </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details class="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs transition-all duration-200">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-bold text-slate-900 hover:text-emerald-700 select-none">
+            <span class="text-base sm:text-lg flex items-center gap-3">
+              <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs font-black shrink-0">5</span>
+              מה קורה אם מתגלה זיהום בקרקע?
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-200"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-6 pb-6 pt-1 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
+            אין סיבה להילחץ! אנו מכינים תוכנית חפירה ופינוי חכמה (Remediation Plan) המגדירה במדויק את הנפח המזוהם. כך מפנים רק את מה שחייבים לאתר מורשה, בלי לרוקן קרקע נקייה לחינם. בסיום מקבלים אישור שחרור רשמי (NFA) והפרויקט ממשיך כסדרו.
+          </div>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 10. BOTTOM CONVERSION SECTION (FINAL CTA + CONTACT FORM) ================= -->
+  <section id="contact" class="py-20 bg-slate-900 text-white relative scroll-mt-20 overflow-hidden">
+    <!-- Decorative Glows -->
+    <div class="absolute -top-40 right-1/3 w-[500px] h-[500px] bg-emerald-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 -left-20 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Contact Info (Right column on RTL - 5 cols) -->
+        <div class="lg:col-span-5 text-right">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold border border-emerald-500/30 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-3.5 h-3.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            מענה ישיר ומקצועי
+          </div>
+          
+          <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">
+            אל תתנו להיתר להמתין. 
+            <span class="text-emerald-400 block mt-1">בואו נניע את הפרויקט היום</span>
+          </h2>
+          
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+            צרו איתנו קשר לשיחת ייעוץ ראשונית ללא התחייבות. ננתח את דרישות הוועדה ונתאים לכם את מתווה העבודה המהיר והמשתלם ביותר.
+          </p>
+
+          <!-- Contact Details List -->
+          <div class="space-y-4 mb-8">
+            <a href="tel:0508912345" class="flex items-center justify-center gap-4 text-center p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/80 hover:border-emerald-500 transition group">
+              <div class="w-11 h-11 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <span class="text-xs text-slate-400 block">טלפון ישיר למוקד ההנדסי:</span>
+                <span class="text-lg font-bold text-white tracking-wider font-mono whitespace-nowrap" dir="ltr">050-891-2345</span>
+              </div>
+            </a>
+
+            <a href="https://wa.me/972508912345?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A4%D7%95%D7%A0%D7%94%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A1%D7%A7%D7%A8%20%D7%A7%D7%A8%D7%A7%D7%A2%20%D7%95%D7%94%D7%99%D7%AA%D7%A8%20%D7%91%D7%A0%D7%99%D7%99%D7%94" 
+               target="_blank" rel="noopener noreferrer"
+               class="flex items-center justify-center gap-4 text-center p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/80 hover:border-emerald-500 transition group">
+              <div class="w-11 h-11 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+              </div>
+              <div>
+                <span class="text-xs text-slate-400 block">וואטסאפ לבירורים ושליחת תוכניות:</span>
+                <span class="text-base font-bold text-emerald-400">התחילו צ'אט מהיר בוואטסאפ</span>
+              </div>
+            </a>
+
+            <div class="flex items-center justify-center gap-4 text-center p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/80">
+              <div class="w-11 h-11 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <span class="text-xs text-slate-400 block">דואר אלקטרוני לשליחת קבצים:</span>
+                <span class="text-sm font-bold text-white tracking-wide" dir="ltr">office@eco-soil.co.il</span>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-4 text-center p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/80">
+              <div class="w-11 h-11 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div>
+                <span class="text-xs text-slate-400 block">שעות פעילות:</span>
+                <span class="text-sm font-semibold text-slate-200">א׳-ה׳: 08:00 - 19:00 | ימי ו׳: 08:30 - 13:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Contact Form (Left column on RTL - 7 cols) -->
+        <div class="lg:col-span-7">
+          <div class="bg-white rounded-3xl p-8 sm:p-10 text-slate-800 shadow-2xl border border-slate-200 relative">
+            <h3 class="text-2xl font-black text-slate-900 mb-2">קבלת הצעת מחיר מותאמת לפרויקט</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mb-6">מלאו את פרטי המגרש ונחזור אליכם עם מתווה עבודה ולוחות זמנים מדויקים</p>
+
+            <form id="bottomContactForm" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="bottomName" class="block text-xs font-bold text-slate-700 mb-1">שם מלא *</label>
+                  <input type="text" id="bottomName" name="name" required placeholder="ישראל ישראלי" 
+                         class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+                </div>
+
+                <div>
+                  <label for="bottomPhone" class="block text-xs font-bold text-slate-700 mb-1">טלפון נייד *</label>
+                  <input type="tel" id="bottomPhone" name="phone" required dir="ltr" placeholder="050-0000000" 
+                         class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition text-right">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="bottomEmail" class="block text-xs font-bold text-slate-700 mb-1">דואר אלקטרוני (אופציונלי לקבלת הצעה)</label>
+                  <input type="email" id="bottomEmail" name="email" dir="ltr" placeholder="name@company.co.il" 
+                         class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition text-right">
+                </div>
+
+                <div>
+                  <label for="bottomProjectRole" class="block text-xs font-bold text-slate-700 mb-1">תפקיד בפרויקט</label>
+                  <select id="bottomProjectRole" name="role" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-800 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition bg-white">
+                    <option value="יזם / חברת נדלן">יזם / חברת נדל"ן</option>
+                    <option value="אדריכל / מתכנן">אדריכל / מתכנן</option>
+                    <option value="מנהל פרויקט / מפקח">מנהל פרויקט / מפקח</option>
+                    <option value="עורך דין / נאמן">עורך דין / מייצג דיירים</option>
+                    <option value="בעל קרקע פרטי">בעל קרקע פרטי</option>
+                    <option value="אחר">אחר</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="bottomCity" class="block text-xs font-bold text-slate-700 mb-1">מיקום המגרש (עיר / יישוב) *</label>
+                  <input type="text" id="bottomCity" name="city" required placeholder="לדוגמה: ראשון לציון" 
+                         class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+                </div>
+
+                <div>
+                  <label for="bottomParcel" class="block text-xs font-bold text-slate-700 mb-1">גוש וחלקה (אם ידוע)</label>
+                  <input type="text" id="bottomParcel" name="parcel" placeholder="גוש: 6543 חלקה: 21" 
+                         class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+                </div>
+              </div>
+
+              <div>
+                <label for="bottomNotes" class="block text-xs font-bold text-slate-700 mb-1">פרטים נוספים או דרישות ספציפיות של הוועדה</label>
+                <textarea id="bottomNotes" name="notes" rows="3" placeholder="פרטו בקצרה: האם יש דרישה לסקר היסטורי בלבד? האם קיבלתם מכתב מהמשרד להגנת הסביבה?" 
+                          class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition"></textarea>
+              </div>
+
+              <button type="submit" id="bottomSubmitBtn" 
+                      class="w-full py-4 px-6 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-base shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 group">
+                <span id="bottomBtnText">שליחת בקשה להצעת מחיר מהירה</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5 text-emerald-400 group-hover:translate-x-1 transition-transform"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+              </button>
+
+              <div id="bottomSuccessAlert" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-sm">
+                <div class="flex items-center gap-2 font-bold mb-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-5 h-5 text-emerald-600"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                  <span>בקשתכם התקבלה בהצלחה!</span>
+                </div>
+                <p>המהנדס האחראי על אזורכם כבר בודק את פרטי המגרש וייצור עמכם קשר בהקדם.</p>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 11. FOOTER ================= -->
+  <footer class="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        
+        <!-- Col 1: About -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 text-white font-black text-lg mb-3">
+            <div class="w-7 h-7 rounded-lg bg-emerald-600 text-white flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/></svg>
+            </div>
+            <span>דרכי נועם | הנדסה סביבתית וסקרי קרקע</span>
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed max-w-md mb-4">
+            חברת ייעוץ הנדסית מובילה בישראל המתמחה בביצוע סקרי קרקע היסטוריים (Phase 1), תוכניות דיגום, קידוחי קרקע וגז קרקע (Phase 2), וליווי יזמים להיתרי בנייה וטופס 4 מול המשרד להגנת הסביבה והוועדות המקומיות.
+          </p>
+          <div class="flex items-center gap-3 text-slate-400 text-[11px]">
+            <span>רישיון מוסמך</span>
+            <span>•</span>
+            <span>מעבדות תקן ISO 17025</span>
+            <span>•</span>
+            <span>פריסה ארצית</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3">ניווט מהיר</h4>
+          <ul class="space-y-2">
+            <li><a href="#services" class="hover:text-emerald-400 transition">השירותים שלנו</a></li>
+            <li><a href="#process" class="hover:text-emerald-400 transition">תהליך העבודה להיתר</a></li>
+            <li><a href="#why-us" class="hover:text-emerald-400 transition">למה לבחור בנו?</a></li>
+            <li><a href="#faq" class="hover:text-emerald-400 transition">שאלות ותשובות נפוצות</a></li>
+            <li><a href="#contact" class="hover:text-emerald-400 transition">יצירת קשר והצעת מחיר</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Legal & Regulatory -->
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3">רגולציה ותקינה</h4>
+          <ul class="space-y-2 text-[11px] text-slate-400">
+            <li>הנחיות המשרד להגנת הסביבה לסקרי קרקע</li>
+            <li>תקנות התכנון והבנייה (תנאים סביבתיים להיתר)</li>
+            <li>נוהל בדיקת גז קרקע אקטיבי ופסיבי TO-15</li>
+            <li>אישורי פינוי לאתרי קצה מורשים</li>
+            <li>טופס 4 וסגירת תיק סביבתי</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+        <p>© 2026 דרכי נועם ייעוץ הנדסי בע"מ. כל הזכויות שמורות.</p>
+        <p class="text-slate-400">המידע באתר נועד למתן מענה ראשוני ואינו מהווה תחליף לחוות דעת מקצועית פרטנית למגרש.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= 12. FLOATING CRO ACTION BUTTONS ================= -->
+  <!-- Bottom-left floating buttons for immediate conversion -->
+  <div class="fixed bottom-6 left-6 z-50 flex flex-col gap-3">
+    
+    <!-- Floating WhatsApp Button (Green with pulsing effect) -->
+    <a href="https://wa.me/972508912345?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A1%D7%A7%D7%A8%20%D7%A7%D7%A8%D7%A7%D7%A2%20%D7%9C%D7%94%D7%99%D7%AA%D7%A8%20%D7%91%D7%A0%D7%99%D7%99%D7%94" 
+       target="_blank" rel="noopener noreferrer"
+       aria-label="שיחה ישירה בוואטסאפ"
+       class="relative group w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center shadow-xl transition-all duration-300 transform hover:scale-110 pulse-ring">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-7 h-7"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+      <!-- Tooltip on Hover -->
+      <span class="absolute left-16 px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-md hidden sm:block">
+        ייעוץ ישיר בוואטסאפ
+      </span>
+    </a>
+
+    <!-- Floating Phone Call Button (Mobile High-Priority) -->
+    <a href="tel:0508912345" 
+       aria-label="חייגו למוקד ההנדסי"
+       class="w-14 h-14 rounded-full bg-slate-900 hover:bg-slate-800 text-white flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-105 border border-slate-700 md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-6 h-6 text-emerald-400"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+
+  </div>
+
+  <!-- ================= 13. INTERACTIVE SUCCESS MODAL ================= -->
+  <div id="leadModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-slate-100 transform scale-95 transition-transform duration-300" id="modalCard">
+      <div class="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-10 h-10"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      </div>
+      <h3 class="text-2xl font-black text-slate-900 mb-2">פנייתך התקבלה בהצלחה!</h3>
+      <p class="text-slate-600 text-sm leading-relaxed mb-6">
+        תודה שפנית ל<strong>דרכי נועם</strong>. המהנדס הסביבתי של אזורכם קיבל את פרטי המגרש ויחזור אליכם לשיחת אפיון תוך זמן קצר.
+      </p>
+      
+      <div class="space-y-3">
+        <a href="https://wa.me/972508912345?text=%D7%94%D7%99%D7%99%20%D7%93%D7%A8%D7%9B%D7%99%20%D7%A0%D7%95%D7%A2%D7%9D%2C%20%D7%94%D7%A9%D7%90%D7%A8%D7%AA%D7%99%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%91%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%9E%D7%A2%D7%A0%D7%94%20%D7%9E%D7%94%D7%99%D7%A8%20%D7%91%D7%95%D7%95%D7%90%D7%98%D7%A1%D7%90%D7%A4" 
+           target="_blank" rel="noopener noreferrer"
+           class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow transition">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+          <span>המשך שיחה מיידית בוואטסאפ</span>
+        </a>
+        
+        <button type="button" id="closeModalBtn" 
+                class="w-full py-2.5 px-4 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition">
+          סגור חלון זה
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // Modal Handler
+    const modal = document.getElementById('leadModal');
+    const modalCard = document.getElementById('modalCard');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    function openModal() {
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modalCard.classList.remove('scale-95');
+        modalCard.classList.add('scale-100');
+      }, 10);
+    }
+
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.add('opacity-0');
+      modalCard.classList.remove('scale-100');
+      modalCard.classList.add('scale-95');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', closeModal);
+    }
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+
+    // Fast Hero Form Submission Simulation
+    const heroLeadForm = document.getElementById('heroLeadForm');
+    const heroSubmitBtn = document.getElementById('heroSubmitBtn');
+    const heroBtnText = document.getElementById('heroBtnText');
+    const heroSuccessAlert = document.getElementById('heroSuccessAlert');
+
+    if (heroLeadForm) {
+      heroLeadForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Button loading state
+        heroSubmitBtn.disabled = true;
+        heroBtnText.textContent = 'שולח פרטים...';
+
+        setTimeout(() => {
+          heroSubmitBtn.disabled = false;
+          heroBtnText.textContent = 'שלחו פרטים ונחזור אליכם בהקדם';
+          heroLeadForm.reset();
+          if (heroSuccessAlert) heroSuccessAlert.classList.remove('hidden');
+          openModal();
+        }, 800);
+      });
+    }
+
+    // Bottom Contact Form Submission Simulation
+    const bottomContactForm = document.getElementById('bottomContactForm');
+    const bottomSubmitBtn = document.getElementById('bottomSubmitBtn');
+    const bottomBtnText = document.getElementById('bottomBtnText');
+    const bottomSuccessAlert = document.getElementById('bottomSuccessAlert');
+
+    if (bottomContactForm) {
+      bottomContactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        bottomSubmitBtn.disabled = true;
+        bottomBtnText.textContent = 'מעבד פנייה...';
+
+        setTimeout(() => {
+          bottomSubmitBtn.disabled = false;
+          bottomBtnText.textContent = 'שליחת בקשה להצעת מחיר מהירה';
+          bottomContactForm.reset();
+          if (bottomSuccessAlert) bottomSuccessAlert.classList.remove('hidden');
+          openModal();
+        }, 800);
+      });
+    }
+  </script>
+</body>
+</html>
