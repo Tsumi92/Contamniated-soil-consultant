@@ -406,9 +406,9 @@
                   <span>100% שמירה על פרטיות. ללא ספאם. ייעוץ מקצועי בלבד</span>
                 </div>
                 <!-- שדות נסתרים: מקור הפנייה + מלכודת לבוטים (honeypot) -->
-                <input type="hidden" name="form" value="טופס עליון">
+                <input type="hidden" name="form" value="בדיקת היתכנות והצעת מחיר">
                 <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
-                  <label>אל תמלאו שדה זה <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                  <label>אל תמלאו שדה זה <input type="text" name="hp_field" tabindex="-1" autocomplete="off"></label>
                 </div>
               </form>
 
@@ -1077,9 +1077,9 @@
                 השליחה לא הצליחה. אפשר לנסות שוב, או ליצור קשר בוואטסאפ או בטלפון.
               </div>
                 <!-- שדות נסתרים: מקור הפנייה + מלכודת לבוטים (honeypot) -->
-                <input type="hidden" name="form" value="טופס תחתון">
+                <input type="hidden" name="form" value="קבלת הצעת מחיר מותאמת לפרויקט">
                 <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
-                  <label>אל תמלאו שדה זה <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                  <label>אל תמלאו שדה זה <input type="text" name="hp_field" tabindex="-1" autocomplete="off"></label>
                 </div>
               </form>
           </div>
@@ -1235,6 +1235,85 @@
       });
     }
 
+    // ===== בדיקות תקינות לטפסים (בצד הדפדפן; הסקריפט בגיליון בודק שוב בצד השרת) =====
+    const LETTERS = /[A-Za-z\u0590-\u05FF]/;
+    const NAME_RE = /^[A-Za-z\u0590-\u05FF][A-Za-z\u0590-\u05FF .'’"״׳\-]*$/;
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+$/;
+    const PARCEL_RE = /^[0-9A-Za-z\u0590-\u05FF\s:\/.,\-]+$/;
+    const LINK_RE = /(https?:\/\/|www\.)/i;
+
+    // מספר נייד ישראלי: 10 ספרות שמתחילות ב-05 (או 972 + 9 ספרות). מחזיר 05XXXXXXXX או null
+    function normalizePhone(v) {
+      let d = String(v || '').replace(/\D/g, '');
+      if (d.indexOf('972') === 0) d = '0' + d.slice(3);
+      return /^05\d{8}$/.test(d) ? d : null;
+    }
+    function formatPhone(d) { return d.slice(0, 3) + '-' + d.slice(3); }
+
+    // מחזירה הודעת שגיאה בעברית, או מחרוזת ריקה אם השדה תקין
+    function fieldMessage(formId, name, raw) {
+      const v = String(raw || '').trim();
+      const bottom = formId === 'bottomContactForm';
+      switch (name) {
+        case 'name':
+          if (!v) return 'נא להזין שם מלא';
+          if (v.length < 2 || v.length > 60 || !NAME_RE.test(v)) return 'נא להזין שם תקין (אותיות בלבד, לפחות 2 תווים)';
+          return LINK_RE.test(v) ? 'אין להזין קישורים בשדה זה' : '';
+        case 'phone':
+          if (!v) return 'נא להזין מספר טלפון נייד';
+          return normalizePhone(v) ? '' : 'מספר נייד לא תקין: יש להזין 10 ספרות שמתחילות ב-05 (לדוגמה 050-1234567)';
+        case 'email':
+          if (!v) return '';
+          return (v.length <= 100 && EMAIL_RE.test(v)) ? '' : 'נא להזין כתובת אימייל עם @ (לדוגמה: name@gmail.com)';
+        case 'city':
+          if (!v) return bottom ? 'נא להזין כתובת מלאה (רחוב ועיר)' : '';
+          if (v.length < 2 || v.length > 120 || !LETTERS.test(v) || LINK_RE.test(v)) return bottom ? 'נא להזין כתובת או שם עיר' : 'נא להזין שם עיר תקין';
+          return '';
+        case 'parcel':
+          if (!v) return '';
+          return (v.length <= 60 && /\d/.test(v) && PARCEL_RE.test(v)) ? '' : 'גוש וחלקה: יש להזין מספרים, למשל "גוש 6543 חלקה 21" או 6543/21';
+        case 'notes':
+          if (v.length > 1000) return 'ניתן להזין עד 1,000 תווים';
+          return LINK_RE.test(v) ? 'אין להזין קישורים בשדה זה' : '';
+        default:
+          return '';
+      }
+    }
+
+    const FIELD_LIMITS = { name: 60, phone: 20, email: 100, city: 120, parcel: 60, notes: 1000 };
+
+    function validateField(form, f) {
+      const msg = fieldMessage(form.id, f.name, f.value);
+      f.setCustomValidity(msg);
+      return msg;
+    }
+    function validateAll(form) {
+      form.querySelectorAll('input[name], textarea[name]').forEach(function (f) {
+        if (f.type !== 'hidden' && f.name !== 'hp_field') validateField(form, f);
+      });
+    }
+    function attachValidation(form) {
+      if (!form) return;
+      form.querySelectorAll('input[name], textarea[name]').forEach(function (f) {
+        if (FIELD_LIMITS[f.name]) f.maxLength = FIELD_LIMITS[f.name];
+        if (f.name === 'phone') { f.setAttribute('inputmode', 'tel'); f.setAttribute('autocomplete', 'tel'); }
+        if (f.name === 'email') { f.type = 'text'; f.setAttribute('inputmode', 'email'); f.setAttribute('autocomplete', 'email'); }
+      });
+      validateAll(form);
+      form.addEventListener('input', function (e) { if (e.target.name) validateField(form, e.target); });
+      form.addEventListener('focusout', function (e) {
+        const f = e.target;
+        if (!f.name || f.type === 'hidden') return;
+        if (f.name === 'phone') {                          // מסדר מספר תקין לפורמט 050-1234567
+          const d = normalizePhone(f.value);
+          if (d) f.value = formatPhone(d);
+        }
+        const msg = validateField(form, f);
+        f.classList.toggle('!border-red-500', !!(msg && f.value.trim()));   // מסגרת אדומה רק כשהוזן ערך לא תקין
+      });
+      form.addEventListener('reset', function () { setTimeout(function () { validateAll(form); }, 0); });
+    }
+
     // ===== טפסי הפנייה: שליחה אמיתית לגיליון Google (Apps Script) =====
     const LEADS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz5yVq6hz84x76opDgem9AGDxWXzMzi595pJmm072Xv_fP-1x-kQ3MnLH6Vn960S6oh3A/exec';
 
@@ -1271,6 +1350,9 @@
       document.getElementById('bottomContactForm'), document.getElementById('bottomSubmitBtn'), document.getElementById('bottomBtnText'),
       'שליחת בקשה להצעת מחיר מהירה', document.getElementById('bottomSuccessAlert'), document.getElementById('bottomErrorAlert')
     );
+
+    attachValidation(document.getElementById('heroLeadForm'));
+    attachValidation(document.getElementById('bottomContactForm'));
   </script>
 </body>
 </html>
