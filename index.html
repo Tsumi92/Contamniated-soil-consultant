@@ -405,6 +405,11 @@
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-3.5 h-3.5 text-emerald-600"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                   <span>100% שמירה על פרטיות. ללא ספאם. ייעוץ מקצועי בלבד</span>
                 </div>
+                <!-- שדות נסתרים: מקור הפנייה + מלכודת לבוטים (honeypot) -->
+                <input type="hidden" name="form" value="טופס עליון">
+                <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+                  <label>אל תמלאו שדה זה <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                </div>
               </form>
 
               <!-- Success Alert (Hidden by default) -->
@@ -413,6 +418,9 @@
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="w-4 h-4 text-emerald-600"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
                   <span>פנייתך התקבלה בהצלחה!</span>
                 </div>
+              </div>
+              <div id="heroErrorAlert" class="hidden mt-3 p-4 rounded-xl bg-red-50 border border-red-200 text-red-900 text-xs sm:text-sm" role="alert">
+                השליחה לא הצליחה. אפשר לנסות שוב, או ליצור קשר בוואטסאפ או בטלפון.
               </div>
 
             </div>
@@ -1065,7 +1073,15 @@
                   <span>פנייתך התקבלה בהצלחה!</span>
                 </div>
               </div>
-            </form>
+              <div id="bottomErrorAlert" class="hidden mt-0 p-4 rounded-xl bg-red-50 border border-red-200 text-red-900 text-sm" role="alert">
+                השליחה לא הצליחה. אפשר לנסות שוב, או ליצור קשר בוואטסאפ או בטלפון.
+              </div>
+                <!-- שדות נסתרים: מקור הפנייה + מלכודת לבוטים (honeypot) -->
+                <input type="hidden" name="form" value="טופס תחתון">
+                <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+                  <label>אל תמלאו שדה זה <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                </div>
+              </form>
           </div>
         </div>
 
@@ -1219,52 +1235,42 @@
       });
     }
 
-    // Fast Hero Form Submission Simulation
-    const heroLeadForm = document.getElementById('heroLeadForm');
-    const heroSubmitBtn = document.getElementById('heroSubmitBtn');
-    const heroBtnText = document.getElementById('heroBtnText');
-    const heroSuccessAlert = document.getElementById('heroSuccessAlert');
+    // ===== טפסי הפנייה: שליחה אמיתית לגיליון Google (Apps Script) =====
+    const LEADS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz5yVq6hz84x76opDgem9AGDxWXzMzi595pJmm072Xv_fP-1x-kQ3MnLH6Vn960S6oh3A/exec';
 
-    if (heroLeadForm) {
-      heroLeadForm.addEventListener('submit', (e) => {
+    function wireLeadForm(form, btn, btnText, idleText, successAlert, errorAlert) {
+      if (!form || !btn || !btnText) return;
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
-        // Button loading state
-        heroSubmitBtn.disabled = true;
-        heroBtnText.textContent = 'שולח פרטים...';
+        if (successAlert) successAlert.classList.add('hidden');
+        if (errorAlert) errorAlert.classList.add('hidden');
 
-        setTimeout(() => {
-          heroSubmitBtn.disabled = false;
-          heroBtnText.textContent = 'שלחו פרטים ונחזור אליכם בהקדם';
-          heroLeadForm.reset();
-          if (heroSuccessAlert) heroSuccessAlert.classList.remove('hidden');
+        btn.disabled = true;
+        btnText.textContent = 'שולח פרטים...';
+        try {
+          const res = await fetch(LEADS_ENDPOINT, { method: 'POST', body: new URLSearchParams(new FormData(form)) });
+          const data = await res.json();
+          if (!data || !data.ok) throw new Error('rejected');
+          form.reset();
+          if (successAlert) successAlert.classList.remove('hidden');
           openModal();
-        }, 800);
+        } catch (err) {
+          if (errorAlert) errorAlert.classList.remove('hidden');
+        } finally {
+          btn.disabled = false;
+          btnText.textContent = idleText;
+        }
       });
     }
 
-    // Bottom Contact Form Submission Simulation
-    const bottomContactForm = document.getElementById('bottomContactForm');
-    const bottomSubmitBtn = document.getElementById('bottomSubmitBtn');
-    const bottomBtnText = document.getElementById('bottomBtnText');
-    const bottomSuccessAlert = document.getElementById('bottomSuccessAlert');
-
-    if (bottomContactForm) {
-      bottomContactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        bottomSubmitBtn.disabled = true;
-        bottomBtnText.textContent = 'מעבד פנייה...';
-
-        setTimeout(() => {
-          bottomSubmitBtn.disabled = false;
-          bottomBtnText.textContent = 'שליחת בקשה להצעת מחיר מהירה';
-          bottomContactForm.reset();
-          if (bottomSuccessAlert) bottomSuccessAlert.classList.remove('hidden');
-          openModal();
-        }, 800);
-      });
-    }
+    wireLeadForm(
+      document.getElementById('heroLeadForm'), document.getElementById('heroSubmitBtn'), document.getElementById('heroBtnText'),
+      'שלחו פרטים ונחזור אליכם בהקדם', document.getElementById('heroSuccessAlert'), document.getElementById('heroErrorAlert')
+    );
+    wireLeadForm(
+      document.getElementById('bottomContactForm'), document.getElementById('bottomSubmitBtn'), document.getElementById('bottomBtnText'),
+      'שליחת בקשה להצעת מחיר מהירה', document.getElementById('bottomSuccessAlert'), document.getElementById('bottomErrorAlert')
+    );
   </script>
 </body>
 </html>
