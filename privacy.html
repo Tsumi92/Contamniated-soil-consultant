@@ -11,17 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script>
-    (function () {
-      var warn = console.warn;
-      console.warn = function () {
-        var first = arguments[0];
-        if (typeof first === 'string' && first.indexOf('cdn.tailwindcss.com should not be used in production') !== -1) return;
-        return warn.apply(console, arguments);
-      };
-    })();
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="tailwind.css">
   <style>body { font-family: 'Heebo', sans-serif; }</style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">

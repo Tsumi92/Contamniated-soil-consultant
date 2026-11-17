@@ -115,46 +115,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
-  <!-- מסתיר את אזהרת הקונסול של Tailwind CDN (לא משנה את התנהגות הדף) -->
-  <script>
-    (function () {
-      var warn = console.warn;
-      console.warn = function () {
-        var first = arguments[0];
-        if (typeof first === 'string' && first.indexOf('cdn.tailwindcss.com should not be used in production') !== -1) return;
-        return warn.apply(console, arguments);
-      };
-    })();
-  </script>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              slate: '#0f172a',
-              navy: '#1e293b',
-              emerald: '#059669',
-              emeraldDark: '#047857',
-              emeraldLight: '#ecfdf5',
-              amber: '#d97706',
-              amberLight: '#fffbeb',
-            }
-          },
-          fontFamily: {
-            sans: ['Heebo', 'sans-serif'],
-          },
-          boxShadow: {
-            'glow-emerald': '0 0 25px -5px rgba(5, 150, 105, 0.4)',
-            'card-hover': '0 20px 30px -10px rgba(15, 23, 42, 0.08)',
-          }
-        }
-      }
-    }
-  </script>
+  <!-- עיצוב: קובץ CSS מוכן (נוצר בפקודה ב-README) -->
+  <link rel="stylesheet" href="tailwind.css">
 
   <style>
     body {
